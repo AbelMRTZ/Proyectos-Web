@@ -1,0 +1,175 @@
+main {
+    margin-top: 180px;
+}
+
+.articulo {
+    border: 1px solid black;
+    height: 330px;
+    width: 310px;
+    background-color: white;
+}
+
+.fotoarticulo:hover {
+    border: 3px solid orange;
+}
+
+.h1principal {
+    display: flex;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin-top: 200px;
+    margin-bottom: 5px;
+}
+
+.h1secundario {
+    display: flex;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin-top: 152px;
+    margin-bottom: 5px;
+}
+
+#sectionarticle {
+    margin: 0;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+}
+
+.overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 10px;
+}
+
+.tituloarticle {
+    height: 30px;
+    max-width: 310px;
+    margin: 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.tituloarticle:hover::after {
+    content: attr(data-text);
+    position: absolute; /* Posiciona el tooltip respecto al contenedor */
+    left: 50%; /* Centra horizontalmente */
+    top: 100%; /* Lo coloca justo debajo del contenedor */
+    transform: translateX(-50%); /* Ajusta la posición para centrarlo */
+    background: black; /* Color de fondo */
+    color: orange; /* Texto en color blanco */
+    padding: 5px; /* Espaciado dentro del tooltip */
+    border-radius: 5px; /* Bordes redondeados */
+    white-space: normal; /* Permite que el texto haga saltos de línea */
+    width: max-content; /* El ancho se ajusta al contenido */
+    max-width: 300px; /* Limita el ancho máximo */
+    z-index: 10; /* Asegura que el tooltip esté por encima de otros elementos */
+    opacity: 1; /* Hace visible el tooltip */
+    visibility: visible; /* Hace que el tooltip se pueda ver */
+    transition: opacity 0.3s; /* Agrega una animación suave */
+}
+
+.tituloarticle::after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.imagenarticle {
+    margin: 0;
+    margin-left: 8px;
+}
+
+.footerarticle {
+    height: 30px;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Distribuye los elementos */
+    align-items: center; /* Alinea verticalmente */
+    padding: 10px;
+}
+
+#menuflechas {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 0;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.formulariobusqueda {
+    display: flex;
+    position: relative;
+    padding: 5px;
+    justify-content: center;
+    height: 0px;
+}
+
+#forminput {
+    width: 220px;
+}
+
+#forminput:hover {
+    background-color: rgb(251, 212, 140);
+}
+
+#forminput6 {
+    width: 220px;
+}
+
+#forminput6:hover {
+    background-color: rgb(251, 212, 140);
+}
+
+#forminput2 {
+    width: 40px;
+}
+#forminput3 {
+    width: 40px;
+}
+#forminput4 {
+    width: 40px;
+}
+#forminput5 {
+    width: 40px;
+}
+
+.formlabel {
+    display: flex;
+    background-color: orange;
+    width: 220px;
+    height: 25px;
+    align-items: center;
+}
+
+.form1 {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-bottom: 5px;
+    gap: 5px;
+}
+
+.botones {
+    display: flex;
+    position: relative;
+    top: 5px;
+    gap: 5px;
+    margin-left: 30%;
+}
+
+

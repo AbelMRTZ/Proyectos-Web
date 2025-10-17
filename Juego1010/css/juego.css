@@ -1,0 +1,192 @@
+/* Aplica a todos los elementos: asegura que el padding y border no afecten el tamaño total */
+* {
+    box-sizing: border-box;  /* Incluye padding y borde dentro del tamaño total del elemento */
+    margin: 0;               /* Elimina márgenes predeterminados */
+    padding: 0;              /* Elimina relleno predeterminado */
+}
+
+body {
+    font-family: 'Madimi One', sans-serif;  /* Fuente personalizada principal */
+}
+
+.separador {
+    display: flex;                    /* Usa Flexbox para alinear el contenido */
+    justify-content: center;         /* Centra horizontalmente */
+    align-items: center;             /* Centra verticalmente */
+    background-color: rgb(55, 64, 140);  /* Color de fondo del separador */
+    height: 20px;                    /* Altura fija del separador */
+    width: 100%;                     /* Ocupa todo el ancho disponible */
+    padding: 5px;                    /* Espaciado interno */
+    top: 134px;                      /* Posición desde el top (no tiene efecto sin position) */
+    z-index: 100;                    /* Prioridad en el apilamiento */
+}
+
+.puntuacion {
+    border: 1px solid black;               /* Borde negro alrededor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra alrededor */
+    width: 50%;                            /* Ocupa el 50% del contenedor */
+    max-width: 600px;                      /* No excede los 600px de ancho */
+    height: auto;                          /* Ajusta altura según contenido */
+    margin: 20px auto;                     /* Centrado horizontal y espacio vertical */
+    background-color: white;              /* Fondo blanco */
+    display: flex;                         /* Flexbox para el contenido interno */
+    flex-direction: column;               /* Coloca elementos en columna */
+    align-items: center;                  /* Centra horizontalmente */
+}
+
+.puntuacion table {
+    margin-bottom: 10px;  /* Espacio debajo de la tabla */
+}
+
+.puntuacion h2 {
+    margin: 0;                     /* Sin márgenes externos */
+    display: flex;                 /* Flexbox para centrar */
+    justify-content: center;      /* Centra horizontalmente */
+    align-items: center;          /* Centra verticalmente */
+    margin-bottom: 6px;           /* Espacio inferior */
+    margin-top: 2px;              /* Espacio superior */
+}
+
+.tablero h2,
+.piezas_disp h2 {
+    display: flex;          /* Flex para alinear texto */
+    justify-content: center; /* Centrado horizontal */
+    margin-top: 30px;       /* Separación superior */
+}
+
+.piezas_canvas {
+    border: 1px solid black;               /* Borde alrededor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    width: 70%;                            /* Ocupa 70% del contenedor */
+    max-width: 600px;                      /* Ancho máximo */
+    height: 200px;                         /* Altura fija */
+    margin: 20px auto;                     /* Centrado con espacio vertical */
+    background-color: white;              /* Fondo blanco */
+    display: flex;                         /* Flex para centrar contenido */
+    justify-content: center;              /* Centrado horizontal */
+    align-items: center;                  /* Centrado vertical */
+    gap: 20px;                             /* Separación entre elementos internos */
+}
+
+.th_fijo {
+    display: flex;               /* Contenedor flexible */
+    justify-content: left;      /* Alineación a la izquierda */
+    background-color: yellowgreen; /* Fondo color verde amarillento */
+    border-radius: 3px;         /* Bordes redondeados */
+    padding-right: 20px;        /* Espacio interno derecho */
+    margin-left: 30px;          /* Separación externa izquierda */
+    padding-left: 5px;          /* Espacio interno izquierdo */
+}
+
+.th_vari {
+    padding-left: 40px;   /* Espacio interno izquierdo */
+    padding-right: 10px;  /* Espacio interno derecho */
+}
+
+.btn_terminar {
+    display: flex;             /* Contenedor flexible */
+    justify-content: center;  /* Centrado horizontal */
+    margin-bottom: 20px;      /* Espacio inferior */
+}
+
+.btn_terminar button {
+    padding: 10px 20px;             /* Espacio interno */
+    font-size: 16px;                /* Tamaño de letra */
+    border: none;                   /* Sin borde */
+    border-radius: 5px;             /* Bordes redondeados */
+    cursor: pointer;                /* Cambia cursor al pasar */
+    background-color: rgb(55, 64, 140);  /* Fondo del botón */
+    color: white;                   /* Color del texto */
+}
+
+.btn_terminar button:hover {
+    padding: 10px 20px;                  /* Igual que en estado normal */
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(71, 80, 163);  /* Color al hacer hover */
+    color: white;
+}
+
+.canvas_ind:hover {
+    width: 130px;     /* Aumenta tamaño al pasar el cursor */
+    height: 130px;
+}
+
+.tablero_juego {
+    display: flex;             /* Contenedor flexible */
+    justify-content: center;  /* Centrado horizontal */
+}
+
+.tablero h2 {
+    margin-bottom: 20px;  /* Separación inferior */
+}
+
+.canvas_ind_tablero {
+    border: 1px solid black;               /* Borde negro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra alrededor */
+}
+
+/* ---------- MODAL ---------- */
+
+.modal {
+    display: none;                          /* Oculto por defecto */
+    position: fixed;                        /* Posición fija respecto a la ventana */
+    z-index: 1000;                          /* Encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;                            /* Ocupa todo el ancho */
+    height: 100%;                           /* Ocupa todo el alto */
+    background-color: rgba(0,0,0,0.4);      /* Fondo semitransparente */
+}
+
+.modal-content {
+    background-color: #fff;                /* Fondo blanco */
+    position: relative;                    /* Relativo dentro del modal */
+    margin: 10% auto;                      /* Centrado horizontal con margen superior */
+    padding: 30px 20px 20px;               /* Espacio interno */
+    border: 1px solid #888;                /* Borde gris */
+    width: 80%;                            /* Ocupa el 80% del ancho disponible */
+    max-width: 500px;                      /* Máximo ancho */
+    text-align: center;                    /* Texto centrado */
+    border-radius: 8px;                    /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Sombra */
+}
+
+.modal.active {
+    display: block;   /* Muestra el modal cuando tiene clase active */
+}
+
+.modal-buttons {
+    margin-top: 20px;         /* Espacio superior */
+    display: flex;            /* Contenedor flexible */
+    justify-content: center;  /* Centrado horizontal */
+    gap: 20px;                /* Espacio entre botones */
+}
+
+.modal-buttons button {
+    padding: 10px 20px;       /* Espacio interno */
+    font-size: 16px;          /* Tamaño del texto */
+    border: none;             /* Sin borde */
+    border-radius: 5px;       /* Bordes redondeados */
+    cursor: pointer;          /* Cursor tipo botón */
+}
+
+.btn-aceptar {
+    background-color: rgb(55, 64, 140);  /* Fondo azul oscuro */
+    color: white;                        /* Texto blanco */
+}
+
+.btn-aceptar:hover {
+    background-color: rgb(71, 80, 163);  /* Fondo más claro al pasar el mouse */
+}
+
+.btn-cancelar {
+    background-color: rgb(55, 64, 140);  /* Igual al botón aceptar */
+    color: white;
+}
+
+.btn-cancelar:hover {
+    background-color: rgb(71, 80, 163);  /* Igual al hover de aceptar */
+}

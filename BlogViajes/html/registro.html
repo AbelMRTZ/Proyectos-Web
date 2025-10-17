@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>registro</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/estiloPC.css">
+        <link rel="stylesheet" href="./css/estiloregistro.css">
+        <link rel="stylesheet" href="./css/fontello.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+        <script defer src="js/resgistro.js"></script>
+        <script defer src="js/loginCheck.js"></script>
+        <script defer src="js/passCheck.js"></script>
+        <script defer src="js/compLog.js"></script>
+    </head>
+
+    <body>
+        <header class="fixedmenu">
+            <a id="imagenHeader" href="index.html">
+                <img src="images/logo.png" width="150" height="150" alt="Logotipo del sitio">
+            </a>
+            <div id="textoHeader">
+                <h1 id="tituloHeader">Vibras Travel</h1>
+                <p id="subtituloHeader">Tu Web de Viajes de Confianza</p>
+            </div>
+    
+        </header>
+        <nav>
+            <!-- Botón de menú -->
+            <button class="boton-menu"><i class="icon-menu"></i></button>
+        
+            <!-- Menú de navegación -->
+            <ul class="menu">
+                <li id="nav-inicio"><a href="index.html" class="hover"><span class="icon"><i class="icon-home"></i></span><span class="text">Inicio</span></a></li>
+                <li id="nav-buscar"><a href="buscar.html" class="hover"><span class="icon"><i class="icon-search"></i></span><span class="text">Buscar</span></a></li>
+                <li id="nav-login"><a href="login.html" class="hover"><span class="icon"><i class="icon-login"></i></span><span class="text">Login</span></a></li>
+                <li id="nav-logout"><a href="index.html" class="hover"><span class="icon"><i class="icon-logout"></i></span><span class="text">Logout <span id="log-user"></span></span></a></li>
+                <li id="nav-registro"><a href="registro.html" class="hover"><span class="icon"><i class="icon-user-plus"></i></span><span class="text">Registro</span></a></li>
+                <li id="nav-nueva"><a href="nueva.html" class="hover"><span class="icon"><i class="icon-plus"></i></span><span class="text">Nueva</span></a></li>
+            </ul>
+        </nav>
+
+        <main>
+
+            <section class="h1principal">
+                <h2>Registrarse</h2>
+            </section>
+
+            <div class="formlogin">
+                <form id="regForm" method="POST" autocomplete="on"> 
+                    <div class="usuariologin">
+                        <label for="usuarioinput" id="usuariolabel"><i class="icon-user"></i>Login</label>
+                        <input id="usuarioinput" type="text" name="login" required autofocus maxlength="20" minlength="4" pattern="^[^\d][^\s][a-zA-Z0-9]*$">
+                        <div id="logintext"></div>
+                    </div>
+                    
+                    <div class="contraseñalogin">
+                        <label for="contraseñainput" class="contraseñalabel"><i class="icon-key"></i>Contraseña</label>
+                        <input id="contraseñainput" type="password" name="pwd" required maxlength="20" minlength="6" pattern="^[a-zA-Z0-9_-\.]+$">
+                    </div>
+
+                    <div class="contraseñalogin">
+                        <label for="contraseñainput2" class="contraseñalabel"><i class="icon-key"></i>Confirmar Contraseña</label>
+                        <input id="contraseñainput2" type="password" name="pwd">
+                        <div id="passtext"></div>
+                    </div>
+                    
+                    <div class="emaillogin">
+                        <label for="contraseñainput3" class="contraseñalabel"><i class="icon-mail"></i>Email</label>
+                        <input id="contraseñainput3" type="text" name="email" required>
+                    </div>
+
+                    <div class="botones">
+                        <input type="reset">
+                        <input id="submit-btn" type="submit">
+                    </div>
+                    
+                    <a href="login.html"><p id="enlacelogin">¿Ya tienes una Cuenta?</p></a>
+
+                </form>
+
+            </div>
+
+        </main>
+
+        <footer id="footergeneral">
+            <a class="e_footer" href="acerca.html">Contacta con Nosotros</a>
+            <img class="e_footer" src="images/copyright.png" width="10" height="10" alt="Logotipo del sitio">
+            <p class="e_footer">2025</p>
+        </footer>
+
+    </body>
+
+</html>

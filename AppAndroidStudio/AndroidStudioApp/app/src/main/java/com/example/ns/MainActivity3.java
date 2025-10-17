@@ -1,0 +1,173 @@
+package com.example.ns;
+
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity3 extends AppCompatActivity {
+
+    // Declaración de variables para los componentes de la interfaz de usuario
+    private RadioGroup opcionGrupo;
+    private RadioButton opcionUnBit, opcionOchoBit;
+    private EditText campoA, campoC;
+    private Button botonCalcular, botonBorrar;
+    private ImageButton botonRegresar;
+    private boolean modoUnBit = true; // Bandera que indica si estamos en el modo de 1 bit
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main3);
+
+        // Inicialización de las vistas (componentes de la interfaz)
+        opcionGrupo = findViewById(R.id.radiogroup);
+        opcionUnBit = findViewById(R.id.unbit);
+        opcionOchoBit = findViewById(R.id.ochobit);
+        campoA = findViewById(R.id.a);
+        campoC = findViewById(R.id.c);
+        botonCalcular = findViewById(R.id.calcular);
+        botonBorrar = findViewById(R.id.borrar);
+        botonRegresar = findViewById(R.id.flecha);
+
+        // Inicialmente, deshabilitamos los EditText
+        campoA.setEnabled(false);
+
+        // Configuración inicial de los placeholders y el grupo de radio
+        configureRadioGroup();
+
+        // Deshabilitar el EditText de salida (outputC) para que no sea editable
+        campoC.setEnabled(false);
+
+        // Configurar el botón "Calcular"
+        botonCalcular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calculateResult();
+            }
+        });
+
+        // Configurar el botón "Borrar"
+        botonBorrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearInputs();
+            }
+        });
+
+        botonRegresar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity3.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Configuración del cambio de fondo en los EditText al enfocarlos
+        configureFocusChangeListeners();
+    }
+
+    // Configura el comportamiento del RadioGroup
+    private void configureRadioGroup() {
+        opcionGrupo.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // Determina cuál RadioButton está seleccionado
+                modoUnBit = (checkedId == R.id.unbit);
+                configureMode();
+                enableInputs(); // Habilita el EditText cuando se selecciona un RadioButton
+            }
+        });
+    }
+
+    // Método para habilitar el EditText
+    private void enableInputs() {
+        campoA.setEnabled(true);
+    }
+
+    // Configura el modo de entrada
+    private void configureMode() {
+        if (modoUnBit) {
+            campoA.setFilters(new android.text.InputFilter[]{new android.text.InputFilter.LengthFilter(1)});
+        } else {
+            campoA.setFilters(new android.text.InputFilter[]{new android.text.InputFilter.LengthFilter(8)});
+        }
+        clearInputs();
+    }
+
+    // Método para calcular el resultado
+    private void calculateResult() {
+        String valueA = campoA.getText().toString().trim();
+
+        if (valueA.isEmpty()) {
+            Toast.makeText(this, "Por favor ingresa el valor A", Toast.LENGTH_SHORT).show();
+            MediaPlayer mpok = MediaPlayer.create(this, R.raw.nok);
+            mpok.start();
+            return;
+        }
+
+        if (!validateInput(valueA)) {
+            Toast.makeText(this, "Solo se permiten valores 0 o 1", Toast.LENGTH_SHORT).show();
+            MediaPlayer mpok = MediaPlayer.create(this, R.raw.nok);
+            mpok.start();
+            return;
+        }
+
+        if (!modoUnBit) {
+            if (valueA.length() < 8) {
+                valueA = String.format("%-8s", valueA).replace(' ', '0');
+                campoA.setText(valueA);
+            }
+        }
+
+        if (modoUnBit) {
+            int bitA = Integer.parseInt(valueA);
+            int result = bitA == 0 ? 1 : 0; // Operación NOT para un bit
+            campoC.setText(String.valueOf(result));
+            MediaPlayer mpok = MediaPlayer.create(this, R.raw.ok);
+            mpok.start();
+        } else {
+            StringBuilder result = new StringBuilder();
+            for (int i = 0; i < 8; i++) {
+                int bitA = Character.getNumericValue(valueA.charAt(i));
+                result.append(bitA == 0 ? 1 : 0); // Operación NOT para 8 bits
+            }
+            campoC.setText(result.toString());
+            MediaPlayer mpok = MediaPlayer.create(this, R.raw.ok);
+            mpok.start();
+        }
+    }
+
+    // Método para borrar los valores
+    private void clearInputs() {
+        campoA.setText("");
+        campoC.setText("");
+    }
+
+    // Método para validar entradas
+    private boolean validateInput(String input) {
+        return input.matches("[01]+");
+    }
+
+    private void configureFocusChangeListeners() {
+        View.OnFocusChangeListener focusChangeListener = new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    v.setBackgroundResource(R.drawable.bordesactivos); // Cambia el fondo al personalizado
+                } else {
+                    v.setBackgroundResource(R.drawable.rectanguloazul); // Restaura el fondo predeterminado
+                }
+            }
+        };
+
+        campoA.setOnFocusChangeListener(focusChangeListener);
+    }
+}

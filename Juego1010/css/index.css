@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box; /* Hace que el padding y border no aumenten el tamaño total del elemento */
+    margin: 0;               /* Elimina márgenes predeterminados */
+    padding: 0;              /* Elimina relleno predeterminado */
+}
+
+body {
+    font-family: 'Madimi One', sans-serif; /* Establece una fuente personalizada para el texto */
+}
+
+.tituloTabla {
+    display: flex;                  /* Activa el modelo flexbox */
+    justify-content: center;       /* Centra el contenido horizontalmente */
+    background-color: white;       /* Fondo blanco */
+    padding: 20px;                 /* Relleno interno de 20px por todos lados */
+}
+
+.separador {
+    display: flex;                 /* Activa el modelo flexbox */
+    justify-content: center;      /* Centra el contenido horizontalmente */
+    align-items: center;          /* Centra el contenido verticalmente */
+    background-color: rgb(55, 64, 140); /* Color de fondo */
+    height: 20px;                 /* Altura del separador */
+    width: 100%;                  /* Ocupa el 100% del ancho disponible */
+    padding: 5px;                 /* Relleno interno de 5px */
+    top: 134px;                   /* Posicionamiento vertical (sin efecto sin position) */
+    z-index: 100;                 /* Nivel de superposición alto */
+}
+
+.tabla {
+    margin-top: 10px;             /* Espacio superior de 10px */
+    margin-bottom: 10px;          /* Espacio inferior de 10px */
+    display: flex;                /* Activa el modelo flexbox */
+    justify-content: center;      /* Centra horizontalmente */
+    width: 100%;                  /* Ocupa todo el ancho */
+}
+
+.encabezadoLista {
+    background-color: beige;      /* Color de fondo */
+    padding: 20px;                /* Relleno interno de 20px */
+}
+
+.encabezadoLista td {
+    padding-inline: 10px;         /* Espaciado horizontal de 10px */
+    padding-block: 10px;          /* Espaciado vertical de 10px */
+    font-size: larger;            /* Tamaño de fuente más grande */
+}
+
+.elementosLista {
+    background-color: white;      /* Fondo blanco */
+}
+
+.elementosLista td {
+    padding-inline: 10px;         /* Espaciado horizontal de 10px */
+    padding-block: 10px;          /* Espaciado vertical de 10px */
+    font-size: larger;            /* Tamaño de fuente más grande */
+    text-align: center;           /* Centrado horizontal del texto */
+    vertical-align: middle;       /* Centrado vertical del texto */
+}
+
+.paginacion {
+    display: flex;                /* Activa flexbox */
+    justify-content: center;      /* Centra horizontalmente */
+    margin-top: 10px;             /* Espacio superior de 10px */
+    gap: 10px;                    /* Espacio entre botones */
+    margin-bottom: 10px;          /* Espacio inferior de 10px */
+}
+
+.paginacion button {
+    background-color: rgb(55, 64, 140); /* Fondo del botón */
+    color: white;                /* Texto blanco */
+    border: 3px inset white;     /* Borde blanco con estilo 'inset' */
+    padding: 5px 15px;           /* Relleno vertical de 5px y horizontal de 15px */
+}
+
+#containerGeneral {
+    display: flex;               /* Activa flexbox */
+    flex-wrap: wrap;             /* Permite que los elementos se ajusten en varias líneas */
+    justify-content: space-between; /* Espacio uniforme entre elementos */
+    gap: 20px;                   /* Espacio entre contenedores */
+    padding: 20px;               /* Relleno interno */
+}
+
+#container1 {
+    flex: 1;                     /* Ocupa espacio disponible de manera proporcional */
+    min-width: 300px;            /* Ancho mínimo de 300px */
+    margin-left: 5%;             /* Margen izquierdo del 5% */
+}
+
+#container2 {
+    display: flex;               /* Activa flexbox */
+    justify-content: center;     /* Centra horizontalmente */
+    align-items: center;         /* Centra verticalmente */
+    flex: 1;                     /* Ocupa espacio proporcional */
+    margin-left: 5%;             /* Margen izquierdo del 5% */
+}
+
+#container2 button {
+    width: 100%;                 /* Ancho total del contenedor padre */
+    display: flex;               /* Activa flexbox */
+    justify-content: center;     /* Centra horizontalmente el contenido del botón */
+    align-items: center;         /* Centra verticalmente el contenido */
+    max-width: 130px;            /* Ancho máximo de 130px */
+    height: 100%;                /* Altura total del contenedor padre */
+    max-height: 70px;            /* Altura máxima de 70px */
+    font-size: larger;           /* Fuente más grande */
+    background-color: yellowgreen; /* Fondo verde amarillento */
+    padding: 10px 0;             /* Relleno vertical de 10px */
+}
+
+#container2 button strong {
+    margin: 0;                   /* Sin margen */
+}
+
+#container2 button:hover {
+    background-color: yellowgreen; /* Mantiene color al hacer hover */
+    border: 2px solid white;    /* Borde blanco de 2px */
+}
+
+@media (max-width: 0px) {
+    .tituloTabla h2 {
+        font-size: 1.2em;        /* Tamaño más pequeño del título */
+    }
+
+    .encabezadoLista td, .elementosLista td {
+        font-size: 0.9rem;       /* Fuente más pequeña para móviles */
+    }
+
+    #container2 button {
+        font-size: 1rem;         /* Reducir tamaño de fuente del botón */
+        max-height: 60px;        /* Reducir altura máxima del botón */
+    }
+
+    .separador {
+        height: 10px;            /* Disminuye altura del separador */
+    }
+}

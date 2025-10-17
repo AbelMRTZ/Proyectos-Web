@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>acerca</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/PC.css">
+        <link rel="stylesheet" href="css/acerca.css">
+        <link rel="stylesheet" href="css/fontello.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="encabezado">
+            <a id="imagenHeader" href="index.html">
+                <img src="images/logo.png" width="120" height="120" alt="Logotipo del sitio">
+            </a>
+            <div id="textoHeader">
+                <h1 id="tituloHeader">1010 COLOR MATCH</h1>
+                <p id="subtituloHeader">¡¡Consigue el mayor numero de grupos de tres o más celdas del mismo color!!</p>
+            </div>
+    
+        </header>
+
+        <main>
+            <div class="separador"></div>
+
+            <section class="cuerpo_acerca">
+                <h2>¿De que Trata esta Práctica?</h2>
+                <div class="texto">
+                    <p>En esta práctica se ha desarrollado una versión simplificada del juego "1010 Color Match", cumpliendo con todos los requisitos establecidos por la asignatura de Programación del Cliente Web del Grado en Ingeniería Multimedia. La aplicación consiste en una cuadrícula de 10x10 celdas donde el jugador debe ir colocando piezas de diferentes formas y colores. El objetivo es formar grupos de tres o más celdas del mismo color para eliminarlas y sumar puntos. El sistema también lleva un recuento del número de piezas colocadas correctamente durante la partida.</p>
+
+                    <p>La implementación ha sido realizada únicamente con tecnologías vistas durante el curso, es decir, HTML5, CSS3 y JavaScript puro, sin el uso de frameworks externos. Se han utilizado las APIs de HTML para el manejo de eventos y dibujo en canvas, así como para la gestión del almacenamiento temporal a través de sessionStorage. Además, se ha trabajado con fetch para realizar peticiones al servidor RESTful que proporciona las piezas, valida el tablero tras cada movimiento y guarda las puntuaciones.</p>
+                    
+                    <p>La estructura del sitio incluye tres páginas principales: index.html, donde se muestra la tabla paginada de puntuaciones; juego.html, que alberga la lógica principal del juego, incluyendo la zona de piezas disponibles y el tablero; y acerca.html, que detalla la autoría del trabajo, problemas encontrados, soluciones aplicadas y otras observaciones relevantes. Se ha seguido la metodología Mobile First para garantizar una correcta visualización en distintos tamaños de pantalla mediante media queries.</p>
+                    
+                    <p>Durante el desarrollo, se prestó especial atención a aspectos clave del juego, como el arrastre de piezas sobre el canvas, la comprobación de si una pieza puede colocarse (respetando su forma y sin salirse del tablero), y la eliminación automática de celdas mediante llamadas al servidor. También se ha programado correctamente la detección del fin de partida, que se activa cuando ninguna de las piezas disponibles puede colocarse en ningún lugar del tablero, momento en el cual se muestra un modal al usuario para guardar su puntuación.</p>
+                    
+                    <p>En conclusión, esta práctica ha supuesto una integración completa de todos los conocimientos adquiridos durante la asignatura, tanto a nivel de diseño visual como de programación interactiva en el navegador. Se ha logrado una aplicación funcional, dinámica y robusta, con un flujo de juego fluido y una experiencia de usuario adecuada. Además, se ha cumplido con los estándares de validación HTML y CSS exigidos y se han abordado los requisitos de forma modular y clara.</p>       
+                </div>
+                <div class="containergeneral">
+                    <div class="container1">
+                        <h2>Información del Autor</h2>
+                        <div class="texto">
+                            <div id="linea">
+                                <p><strong>NOMBRE: </strong>Abel Martínez Molina</p>
+                                <p><strong>DNI: </strong>54845401S</p>
+                                <p><strong>EMAIL: </strong>amm682@alu.ua.es</p>
+                                <p><strong>GRUPO: </strong>03 (EPS IV - EP/0-27I)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container2">
+                        <h2>Información del Trabajo</h2>
+                        <p class="texto">
+                            A lo largo del desarrollo de la práctica he ido aprendiendo y consolidando muchos conceptos de JavaScript, especialmente relacionados con la manipulación del DOM, eventos, uso de canvas y almacenamiento local. Sin embargo, también me he encontrado con dificultades en ciertas partes del proyecto, como la implementación precisa de las mecánicas del juego y, especialmente, la lógica para detectar correctamente cuándo debe finalizar la partida, ya que requiere comprobar todas las posiciones posibles del tablero para cada pieza. Finalmente, para volver al índice del sitio, simplemente hay que pulsar el logo situado en la parte superior de la página.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footergeneral">
+            <a class="e_footer" href="acerca.html">Contacta con Nosotros</a>
+            <img class="e_footer" src="images/copyright.png" width="10" height="10" alt="Logotipo del sitio">
+            <p class="e_footer">2025</p>
+        </footer>
+
+    </body>
+
+</html>

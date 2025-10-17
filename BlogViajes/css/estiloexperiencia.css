@@ -1,0 +1,199 @@
+.h1principal {
+    display: flex;
+    position: relative;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin-top: 200px;
+    margin-bottom: 5px;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.info {
+    flex: 1;
+}
+
+.descripcion {
+    flex: 2;
+    text-align: justify;
+}
+
+.containergeneral h2 {
+    background: linear-gradient(to right, orange, lightgrey);
+    padding-left: 5px;
+}
+
+#cuerpo p {
+    border-bottom: 1px solid gray; /* Línea divisoria */
+    padding-bottom: 15px; /* Espaciado entre el texto y la línea */
+    margin-bottom: 5px; /* Espaciado entre párrafos */
+}
+
+/* Elimina la línea del último elemento */
+#cuerpo p:last-child {
+    border-bottom: none;
+}
+
+.a_category {
+    color:black;
+
+}
+
+.a_category:hover {
+    text-decoration: underline;
+}
+
+#descripcionfoto {
+    display: flex;
+    position: relative;
+    margin-top: 0;
+    font-size: 2.1vw;
+    justify-content: center;
+    padding-bottom: 10px;
+    background: linear-gradient(to bottom, orange, lightgrey);
+
+}
+
+#foto {
+    display: flex;
+    position: relative;
+    margin-bottom: 0px;
+    border: 2px solid orange;
+}
+
+#foto:hover {
+    border: 4px solid orange;
+    cursor: zoom-in;
+}
+
+#botones-foto {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.comentario {
+    border: 2px solid black;
+    background-color: whitesmoke;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 5px;
+}
+
+.autor {
+    border-bottom: 1px solid gray; /* Línea divisoria */
+    padding-bottom: 10px; /* Espaciado entre el texto y la línea */
+    margin-bottom: 5px; /* Espaciado entre párrafos */
+    margin-top: 5px;
+}
+
+.comentarios {
+    border-bottom: 1px solid gray; /* Línea divisoria */
+    padding-bottom: 10px; /* Espaciado entre el texto y la línea */
+    margin-bottom: 10px; /* Espaciado entre párrafos */
+    margin-top: 10px;
+}
+
+.fecha {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#cajacomentario {
+    display: flex;
+    flex-direction: column;
+}
+
+.dejar_comentario {
+    background-color:beige;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+
+textarea {
+    height: 100px;
+    overflow: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dejar_comentario a {
+    color:red;
+    font-size: 15px;
+    display:flex;
+    position: relative;
+    justify-content: center;
+}
+
+.dejar_comentario a:hover {
+    text-decoration: underline;
+}
+
+.info a {
+    color: black;
+}
+
+.botones {
+    margin-top: 7px;
+    padding-bottom: 10px;
+}
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fija en la pantalla */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* Fondo oscuro con opacidad */
+}
+
+/* Estilos del contenido del modal */
+.modal-content {
+    background-color: #fff;
+    position: relative;
+    margin: 10% auto; /* Ajusta el margen superior */
+    padding: 30px 20px 20px; /* Más padding arriba para el botón de cerrar */
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Estilo del botón de cerrar */
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal.active {
+    display: block;
+}

@@ -1,0 +1,191 @@
+main {
+    margin-top: 180px;
+}
+
+.h1principal {
+    display: flex;
+    position: relative;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin-top: 200px;
+    margin-bottom: 5px;
+}
+
+.formlogin {
+
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    top: 13px;
+}
+
+.usuariologin {
+    display: flex;
+    flex-direction: column; /* Pone los elementos en columna */
+    width: 200px; /* Ajusta el ancho */
+    gap: 5px;
+}
+
+#usuariolabel {
+    display: flex;
+    background-color: orange;
+    border: 2px black solid;
+    padding: 5px;
+}
+
+#enlacelogin {
+    color: black;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    position: relative;
+    display: flex;
+    font-size: 15px;
+    padding: 3px;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin-left: 15%;
+    margin-bottom: 30px;
+}
+
+.contraseñalogin {
+    display: flex;
+    flex-direction: column; /* Pone los elementos en columna */
+    width: 200px; /* Ajusta el ancho */
+    gap: 5px;
+    margin-bottom: 20px;
+    height: 100%;
+    margin-top: 20px;
+}
+
+.emaillogin {
+    display: flex;
+    flex-direction: column; /* Pone los elementos en columna */
+    width: 200px; /* Ajusta el ancho */
+    gap: 5px;
+    margin-bottom: 2px;
+    height: 100%;
+}
+
+.contraseñalabel {
+    display: flex;
+    background-color: orange;
+    border: 2px black solid;
+    padding: 5px;
+}
+
+.botones {
+    display: flex;
+    position: relative;
+    top: 5px;
+    margin-left: 16%;
+}
+
+#usuarioinput:hover {
+    background-color: rgb(251, 212, 140);
+}
+
+#contraseñainput:hover {
+    background-color: rgb(251, 212, 140);
+}
+
+#usuarioinput {
+    border: 1px solid black;
+}
+
+#contraseñainput {
+    border: 1px solid black;
+}
+
+#usuarioinput:focus {
+    background-color: rgb(251, 212, 140);
+    border: 3px solid black;
+
+}
+
+#contraseñainput:focus {
+    background-color: rgb(251, 212, 140);
+    border: 3px solid black;
+
+}
+
+#contraseñainput2 {
+    border: 1px solid black;
+}
+#contraseñainput2:hover {
+    background-color: rgb(251, 212, 140);
+}
+#contraseñainput2:focus {
+    background-color: rgb(251, 212, 140);
+    border: 3px solid black;
+
+}
+
+#contraseñainput3 {
+    border: 1px solid black;
+}
+#contraseñainput3:hover {
+    background-color: rgb(251, 212, 140);
+}
+#contraseñainput3:focus {
+    background-color: rgb(251, 212, 140);
+    border: 3px solid black;
+
+}
+
+#loginPopover {
+
+}
+
+#passPopover {
+    
+}
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fija en la pantalla */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* Fondo oscuro con opacidad */
+}
+
+/* Estilos del contenido del modal */
+.modal-content {
+    background-color: #fff;
+    position: relative;
+    margin: 10% auto; /* Ajusta el margen superior */
+    padding: 30px 20px 20px; /* Más padding arriba para el botón de cerrar */
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Estilo del botón de cerrar */
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal.active {
+    display: block;
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores primarios -->
+    <color name="colorPrimary">#4CAF50</color> <!-- Verde principal -->
+    <color name="colorPrimaryVariant">#388E3C</color> <!-- Verde oscuro -->
+    <color name="colorOnPrimary">#FFFFFF</color> <!-- Texto sobre fondo verde -->
+
+    <!-- Colores secundarios -->
+    <color name="colorSecondary">#81C784</color> <!-- Verde claro -->
+    <color name="colorSecondaryVariant">#66BB6A</color>
+    <color name="colorOnSecondary">#FFFFFF</color> <!-- Texto sobre fondo secundario -->
+
+    <!-- Fondo y superficie -->
+    <color name="colorBackground">#F5F5F5</color> <!-- Fondo principal -->
+    <color name="colorSurface">#FFFFFF</color> <!-- Fondo de tarjetas -->
+    <color name="colorOnBackground">#212121</color> <!-- Texto sobre el fondo -->
+    <color name="colorOnSurface">#212121</color> <!-- Texto sobre superficie -->
+
+    <!-- Error -->
+    <color name="colorError">#D32F2F</color>
+    <color name="colorOnError">#FFFFFF</color>
+</resources>

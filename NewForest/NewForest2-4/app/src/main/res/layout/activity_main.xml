@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+
+
+    <ViewFlipper
+        android:id="@+id/carrusel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:autoStart="true"
+        android:flipInterval="6000"
+        android:inAnimation="@android:anim/fade_in"
+        android:outAnimation="@android:anim/fade_out" >
+
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/logocentro" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Reforestemos juntos"
+            android:textColor="@color/colorPrimary"
+            android:textSize="35dp"
+            android:padding="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Dona, colabora y haz amigos: todo en una misma aplicación"
+            android:textColor="@color/colorPrimary"
+            android:textSize="35dp"
+            android:padding="16dp" />
+
+    </ViewFlipper>
+
+    <Button
+        android:id="@+id/comenzar"
+        android:layout_width="312dp"
+        android:layout_height="57dp"
+        android:textSize="19dp"
+        android:text="Comenzar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="520dp"
+        android:background="@drawable/button_background"/>
+
+    <Button
+        android:id="@+id/iniciarsesion"
+        android:layout_width="312dp"
+        android:layout_height="57dp"
+        android:textSize="19dp"
+        android:text="Iniciar Sesión"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/comenzar"
+        android:layout_marginTop="20dp"
+        android:textColor="#1F1F1F"
+        android:background="@android:color/transparent"/>
+
+</RelativeLayout>

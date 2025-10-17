@@ -1,0 +1,176 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Atrás"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/black"
+        android:contentDescription="Atrás"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="-14dp" />
+
+    <!-- Botón de iniciar sesión en la esquina superior derecha -->
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar Sesión"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/black"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginRight="-12dp" />
+
+    <!-- Header: Botón para cambiar a registro de organizador -->
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+    <!-- Botón de Organizador -->
+    <Button
+        android:id="@+id/button_organizer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Organizador"
+        android:layout_marginEnd="5dp"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/darker_gray"
+        android:padding="10dp" />
+
+    <!-- Botón de Voluntario -->
+    <Button
+        android:id="@+id/button_volunteer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Voluntario"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/button_selected"
+        android:textColor="@android:color/white"
+        android:padding="10dp" />
+</LinearLayout>
+
+    <!-- Línea divisoria -->
+<View
+android:id="@+id/divider_line"
+android:layout_width="match_parent"
+android:layout_height="1dp"
+android:layout_below="@id/header_layout"
+android:background="@android:color/darker_gray"
+android:layout_marginVertical="10dp" />
+
+    <!-- Mensaje explicativo -->
+<TextView
+android:id="@+id/profile_description"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_below="@id/divider_line"
+android:text="El perfil de voluntario permite unirse a eventos de reforestación y contribuir activamente. Seleccione este perfil si desea participar como voluntario."
+android:textColor="@android:color/black"
+android:layout_marginLeft="20dp"
+android:layout_marginRight="20dp"
+android:textSize="14sp"
+android:padding="10dp"
+android:gravity="center" />
+
+    <!-- ScrollView para campos de entrada -->
+<ScrollView
+android:id="@+id/scrollView_inputs"
+android:layout_width="match_parent"
+android:layout_height="0dp"
+android:layout_below="@id/profile_description"
+android:layout_above="@id/footer_layout"
+android:padding="20dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Nombre de usuario -->
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre y apellidos"
+        android:padding="10dp"
+        android:background="@drawable/edit_text_background"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Correo electrónico -->
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo electrónico"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:background="@drawable/edit_text_background"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Contraseña -->
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:background="@drawable/edit_text_background"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Teléfono de contacto -->
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Teléfono de contacto"
+        android:inputType="phone"
+        android:padding="10dp"
+        android:background="@drawable/edit_text_background" />
+</LinearLayout>
+</ScrollView>
+
+    <!-- Footer: Checkbox y botón de registro -->
+<LinearLayout
+android:id="@+id/footer_layout"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:gravity="center"
+android:background="@color/colorSurface"
+android:padding="10dp"
+android:layout_alignParentBottom="true">
+
+<CheckBox
+    android:id="@+id/accept_privacy"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Acepto los términos y condiciones"
+    android:layout_marginEnd="20dp" />
+
+<Button
+    android:id="@+id/buttonRegister"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Registrarse"
+    android:background="@drawable/button_background"
+    android:textColor="@android:color/white"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="10dp" />
+</LinearLayout>
+    </RelativeLayout>

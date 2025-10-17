@@ -1,0 +1,31 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme -->
+    <style name="Base.Theme.NewForest" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:fontFamily">@font/sfprodisplaymedium</item>
+
+        <!-- Colores primarios -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+
+        <!-- Colores secundarios -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+
+        <!-- Fondo y superficie -->
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnBackground">@color/colorOnBackground</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+
+        <!-- Colores de error -->
+        <item name="colorError">@color/colorError</item>
+        <item name="colorOnError">@color/colorOnError</item>
+
+        <!-- Desactiva las mayúsculas automáticas en botones -->
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <!-- Application Theme -->
+    <style name="Theme.NewForest" parent="Base.Theme.NewForest" />
+</resources>

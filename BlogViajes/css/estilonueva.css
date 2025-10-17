@@ -1,0 +1,341 @@
+main {
+    margin-top: 180px;
+}
+
+.h1principal {
+    display: flex;
+    position: relative;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin-top: 200px;
+    margin-bottom: 10px;
+}
+
+.form1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.form2 {
+    display: flex;
+    gap: 5px;
+}
+
+.label1 {
+    background-color: orange;
+    border: 2px solid black;
+    margin-bottom: 5px;
+    height: 37px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding-left: 5px;
+}
+
+#label2 {
+    background-color: orange;
+    border: 2px solid black;
+    margin-bottom: 5px;
+    height: 37px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding-left: 5px;
+
+}
+
+#label3 {
+    background-color: orange;
+    border: 2px solid black;
+    height: 37px;
+    margin: 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding-left: 5px;
+}
+
+.btn_derecha{
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+#conjunto_botones {
+    display: flex;
+    gap: 10px;
+}
+.label3_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: orange;
+    border: 2px solid black;
+    height: 37px;
+    padding: 0 10px;
+    margin: 0 0 5px 0;
+}
+
+#titulo {
+    height: 35px;
+}
+
+#titulo:hover {
+    background-color: rgb(251, 212, 140);
+    border: 2px solid black;
+}
+#titulo:focus {
+    background-color: rgb(251, 212, 140);
+    border: 3px solid black;
+}
+#titulo1 {
+    height: 35px;
+    width: 80%;
+}
+
+#titulo1:hover {
+    background-color: rgb(251, 212, 140);
+    border: 2px solid black;
+}
+
+#titulo1:focus {
+    background-color: rgb(251, 212, 140);
+    border: 3px solid black;
+}
+
+#descripcion {
+    height: 100px;
+}
+
+#descripcion:hover {
+    background-color: rgb(251, 212, 140);
+    border: 2px solid black;
+}
+#descripcion:focus {
+    background-color: rgb(251, 212, 140);
+    border: 3px solid black;
+}
+
+#horas {
+    height: 37px;
+    width: 20%;
+}
+
+#boton-categoria {
+   width: 20%;
+}
+
+#categoria-input {
+    display: flex;
+    gap: 5px;
+}
+
+#cat_asignadas {
+    display: flex;
+    gap: 20px;
+    background-color: white;
+    border: 2px double black;
+    margin-top: 5px;
+    justify-content: center;
+    padding-right: 5px;
+    padding-left: 3px;
+}
+
+.cat_individual {
+    background-color: lightgray;
+    padding: 5px;
+    border: 3px outset lightgray;
+    border-top-color: whitesmoke;
+    border-left-color: whitesmoke;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.cat_individual button {
+    transform: scale(0.5); /* Reduce al 70% del tamaño original */
+    transform-origin: center; /* Mantiene la escala centrada */
+
+}
+
+.cat_individual:hover {
+    display: flex;
+    position: relative;
+    border: 4px outset lightgray;
+    border-top-color: whitesmoke;
+    border-left-color: whitesmoke;
+}
+
+.cat_fotos {
+    display: flex;
+    gap: 20px;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.foto_individual {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.foto_individual:hover {
+    border: 3px solid orange;
+}
+
+.foto_individual img {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.fotos_textaerea {
+    width: 100%;
+    height: 100px;
+}
+
+#fotos_textaerea2 {
+    width: 100%;
+    height: 100px;
+}
+
+
+.container1 {
+    flex: 2;
+    margin-left: 10px;
+}
+
+.container2 {
+    flex: 3;
+    margin-right: 10px;
+}
+
+.containergeneral {
+    display: flex;
+    gap: 10px;
+}
+
+.botones_fotos {
+    gap: 100px;
+}
+
+.botones_finales {
+    margin-bottom: 20px;
+    margin-top: 15px;
+    background-color: beige;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    gap: 30px;
+}
+
+#b1 {
+    background-color: lightcoral;
+}
+
+#b1:hover {
+    border: 2.5px solid black;
+}
+
+#b2 {
+    background-color: lightgreen;
+}
+
+#b2:hover {
+    border: 2.5px solid black;
+}
+
+.containergeneral {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .container1, .container2 {
+    flex: 1 1 45%;
+    box-sizing: border-box;
+  }
+  
+  .container2 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cat_fotos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .foto_individual {
+    width: 100%;
+    max-width: 200px;
+    border: 2px solid black;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .foto_individual img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 5px;
+  }
+
+  .modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fija en la pantalla */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* Fondo oscuro con opacidad */
+}
+
+/* Estilos del contenido del modal */
+.modal-content {
+    background-color: #fff;
+    position: relative;
+    margin: 10% auto; /* Ajusta el margen superior */
+    padding: 30px 20px 20px; /* Más padding arriba para el botón de cerrar */
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Estilo del botón de cerrar */
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal.active {
+    display: block;
+}

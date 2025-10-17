@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Acerca</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estiloPC.css">
+        <link rel="stylesheet" href="css/estilloacerca.css">
+        <link rel="stylesheet" href="css/fontello.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+        <script defer src="js/compLog.js"></script>
+        <script defer src="js/logout.js"></script>
+    </head>
+
+    <body>
+        <header class="fixedmenu">
+            <a id="imagenHeader" href="index.html">
+                <img src="images/logo.png" width="150" height="150" alt="Logotipo del sitio">
+            </a>
+            <div id="textoHeader">
+                <h1 id="tituloHeader">Vibras Travel</h1>
+                <p id="subtituloHeader">Tu Web de Viajes de Confianza</p>
+            </div>
+    
+        </header>
+        <nav>
+            <!-- Botón de menú -->
+            <button class="boton-menu"><i class="icon-menu"></i></button>
+        
+            <!-- Menú de navegación -->
+            <ul class="menu">
+                <li id="nav-inicio"><a href="index.html" class="hover"><span class="icon"><i class="icon-home"></i></span><span class="text">Inicio</span></a></li>
+                <li id="nav-buscar"><a href="buscar.html" class="hover"><span class="icon"><i class="icon-search"></i></span><span class="text">Buscar</span></a></li>
+                <li id="nav-login"><a href="login.html" class="hover"><span class="icon"><i class="icon-login"></i></span><span class="text">Login</span></a></li>
+                <li id="nav-logout"><a href="index.html" class="hover"><span class="icon"><i class="icon-logout"></i></span><span class="text">Logout <span id="log-user"></span></span></a></li>
+                <li id="nav-registro"><a href="registro.html" class="hover"><span class="icon"><i class="icon-user-plus"></i></span><span class="text">Registro</span></a></li>
+                <li id="nav-nueva"><a href="nueva.html" class="hover"><span class="icon"><i class="icon-plus"></i></span><span class="text">Nueva</span></a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="h1principal">
+                <h2>Sobre Nosotros</h2>
+            </section>
+            <section class="cuerpo_acerca">
+                <h2>¿De que Trata esta Práctica?</h2>
+                <div class="texto">
+                    <p>La práctica consiste en desarrollar un sitio web responsive utilizando exclusivamente HTML, CSS y JavaScript. El objetivo es que los estudiantes aprendan a estructurar correctamente un documento web, aplicar estilos mediante CSS y diseñar interfaces adaptables a distintos dispositivos siguiendo la metodología Mobile First.</p>
+
+                    <p>El sitio web estará centrado en la publicación de experiencias de viaje. Los usuarios registrados podrán compartir sus vivencias y comentar las publicaciones de otros. En esta segunda fase, el contenido será completamente dinámico.</p>
+                    
+                    <p>El proyecto deberá incluir varias páginas HTML: index.html (página principal con una lista de experiencias paginada), login.html (para el inicio de sesión), registro.html (para crear cuentas nuevas), buscar.html (con un buscador de experiencias), experiencia.html (donde se mostrará la información detallada de una experiencia), nueva.html (para la publicación de nuevas experiencias) y acerca.html (con información sobre la práctica y los autores). Todas las páginas compartirán una cabecera con logotipo y barra de navegación, así como un pie de página con información de contacto y derechos de autor.</p>
+                    
+                    <p>El diseño debe ser adaptable a diferentes tamaños de pantalla mediante el uso de media queries. Además, se deberá emplear Web Fonts e Icon Fonts para mejorar la apariencia visual. Es obligatorio validar el código HTML en https://validator.w3.org/ y se penalizará el uso de direccionamiento absoluto para archivos externos.</p>
+                    
+                    <p>En esta segunda fase se ha dotado a la web de una estructura dinamica compuesta por archivos Javascript que permiten al usuario interactuar con un servidor a traves de llamadas al api y a la base de datos.</p>       
+                </div>
+                <div class="containergeneral">
+                    <div class="container1">
+                        <h2>Información del Autor</h2>
+                        <div class="texto">
+                            <div id="linea">
+                                <p><strong>NOMBRE: </strong>Abel Martínez Molina</p>
+                                <p><strong>DNI: </strong>54845401S</p>
+                                <p><strong>EMAIL: </strong>amm682@alu.ua.es</p>
+                                <p><strong>GRUPO: </strong>03 (EPS IV - EP/0-27I)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container2">
+                        <h2>Información del Trabajo</h2>
+                        <p class="texto">
+                            Durante la creacion y elaboración de esta practica, mis conocimientos de Javascript han ido evolucionando, ya que he ido aprendiendo en función iba haciendo la práctia. Por ello se pueden observar diferentes metodologias de trabajo en el codigo javascript. Sobretodo lo mas destacable es que al principio hice uso de diferentes archivos js para un mismo archivo html, pero posteriormente descubri que era mejor hacerlo con funciones. Por es el código js de Registro y Login estan en diferentes archivos. CheckLogin.js, CheckPass.js y Registro.js pertecen a Registro.html, y login.js y CompLog.js pertecen a Login.html. También queria comentar que la única parte de la práctica que no he llevado a cabo por dificultades y falta de tiempo a sido la correcta limpieza del formulario de enviar comentarios (0,25p). Por otra parte he hecho algunas incoporaciones adicionales como un boton para mostrar mas comentarios, ya que la página por defecto solo muestra 3, si quieres ver mas tendrás que pulsar sobre ese botón. Para cambiar el nº de Experiencias que se ven en index se ajusta a través de la variable cantidadPaginas.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footergeneral">
+            <a class="e_footer" href="acerca.html">Contacta con Nosotros</a>
+            <img class="e_footer" src="images/copyright.png" width="10" height="10" alt="Logotipo del sitio">
+            <p class="e_footer">2025</p>
+        </footer>
+
+    </body>
+
+</html>

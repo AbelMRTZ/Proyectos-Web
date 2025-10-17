@@ -1,0 +1,7 @@
+host     = "localhost"
+username = "omeka"
+password = "omeka"
+dbname   = "omeka"
+prefix   = "omeka_"
+charset  = "utf8"
+Gestor de imagenes = GD

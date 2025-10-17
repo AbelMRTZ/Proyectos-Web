@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>experiencia</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estiloPC.css">
+        <link rel="stylesheet" href="css/estiloexperiencia.css">
+        <link rel="stylesheet" href="css/fontello.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+        <script defer src="js/compLog.js"></script>
+        <script defer src="js/logout.js"></script>
+        <script src="js/experiencia.js"></script>
+    </head>
+
+    <body>
+        <header class="fixedmenu">
+            <a id="imagenHeader" href="index.html">
+                <img src="images/logo.png" width="150" height="150" alt="Logotipo del sitio">
+            </a>
+            <div id="textoHeader">
+                <h1 id="tituloHeader">Vibras Travel</h1>
+                <p id="subtituloHeader">Tu Web de Viajes de Confianza</p>
+            </div>
+    
+        </header>
+        <nav>
+            <!-- Botón de menú -->
+            <button class="boton-menu"><i class="icon-menu"></i></button>
+        
+            <!-- Menú de navegación -->
+            <ul class="menu">
+                <li id="nav-inicio"><a href="index.html" class="hover"><span class="icon"><i class="icon-home"></i></span><span class="text">Inicio</span></a></li>
+                <li id="nav-buscar"><a href="buscar.html" class="hover"><span class="icon"><i class="icon-search"></i></span><span class="text">Buscar</span></a></li>
+                <li id="nav-login"><a href="login.html" class="hover"><span class="icon"><i class="icon-login"></i></span><span class="text">Login</span></a></li>
+                <li id="nav-logout"><a href="index.html" class="hover"><span class="icon"><i class="icon-logout"></i></span><span class="text">Logout <span id="log-user"></span></span></a></li>
+                <li id="nav-registro"><a href="registro.html" class="hover"><span class="icon"><i class="icon-user-plus"></i></span><span class="text">Registro</span></a></li>
+                <li id="nav-nueva"><a href="nueva.html" class="hover"><span class="icon"><i class="icon-plus"></i></span><span class="text">Nueva</span></a></li>
+            </ul>
+        </nav>
+
+        <main>
+
+            <section class="h1principal">
+                <h2></h2>
+            </section>
+
+                <div class="containergeneral">
+                    <div class="container1">
+                        <!-- Columna izquierda: Información general -->
+                        <div class="info">
+                            <div><h2>Información de la Experiencia</h2></div>
+                            <div id="cuerpo">
+                                <p>
+                                    <span class="icon"><i class="icon-user"></i></span>
+                                    <strong>Autor:</strong>
+                                    <span id="js_autor"></span>
+                                </p>
+                                <p>
+                                    <span class="icon"><i class="icon-star-filled"></i></span>
+                                    <strong>Valoración:</strong>
+                                    <span id="js_valoracion"></span>
+                                </p>
+                                <p>
+                                    <span class="icon"><i class="icon-calendar"></i></span>
+                                    <strong>Fecha:</strong>
+                                    <span id="js_fecha"></span>
+                                </p>
+                                <p>
+                                    <span class="icon"><i class="icon-comment"></i></span>
+                                    <strong><a href="#cajacomentario">Comentarios:</a></strong>
+                                    <span id="js_comentario"></span>
+                                </p>
+                                <p>
+                                    <span class="icon"><i class="icon-clock"></i></span>
+                                    <strong>Duración:</strong>
+                                    <span id="js_duracion"></span>
+                                </p>
+                                <p>
+                                    <span class="icon"><i class="icon-tag"></i></span>
+                                    <strong>Categorias:</strong> 
+                                    <span id="js_categoria"></span>
+                                </p>                           
+                            </div>
+                        </div>
+                
+                        <!-- Columna derecha: Descripción detallada -->
+                        <div class="descripcion">
+                            <h2>Detalles de la Actividad</h2>
+                            <p id="js_texto">
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="container1">
+                        <!-- Columna izquierda: Información general -->
+                        <div class="info">
+                            <div id="js_carrusel">
+                                <div>                                   
+                                </div>
+                            </div>
+                            <div id="botones-foto">                             
+                            </div>   
+                        </div>
+                
+                        <!-- Columna derecha: Descripción detallada -->
+                        <div class="descripcion">
+                            <div id="js_coments">
+                                
+                            </div>
+                            <div class="dejar_comentario">
+                                <div id="js_dejar_comentario">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+        </main>
+
+        <footer id="footergeneral">
+            <a class="e_footer" href="acerca.html">Contacta con Nosotros</a>
+            <img class="e_footer" src="images/copyright.png" width="10" height="10" alt="Logotipo del sitio">
+            <p class="e_footer">2025</p>
+        </footer>
+
+    </body>
+
+</html>
+

@@ -1,0 +1,56 @@
+// layout/activity_main.xml - Menu Principal
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/fondogris"
+tools:context=".MainActivity">
+<!-- genero una vista sin contenido y la centro -->
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="PUERTAS LOGICAS"
+       android:textSize="30dp"
+       android:textColor="@color/verde"
+       android:textStyle="bold|italic"
+       android:layout_centerHorizontal="true"
+       android:layout_marginBottom="35dp"
+       android:layout_above="@id/And"/>
+    <TextView
+       android:id="@+id/Centro"
+       android:layout_width="30dp"
+       android:layout_height="30dp"
+       android:layout_centerHorizontal="true"
+       android:layout_centerVertical="true" />
+    <ImageButton
+        android:id="@+id/Not"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/not"
+        android:layout_above="@id/Centro"
+        android:layout_toLeftOf="@id/Centro"/>
+    <ImageButton
+        android:id="@+id/And"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/and"
+        android:layout_above="@id/Centro"
+        android:layout_toRightOf="@id/Centro"/>
+    <ImageButton
+        android:id="@+id/Or"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/or"
+        android:layout_below="@id/Centro"
+        android:layout_toLeftOf="@id/Centro"/>
+    <ImageButton
+        android:id="@+id/Xor"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/xor"
+        android:layout_below="@id/Centro"
+        android:layout_toRightOf="@id/Centro"/>
+</RelativeLayout>

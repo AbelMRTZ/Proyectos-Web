@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/menu_hamburguesa"
+            android:layout_width="30dp"
+            android:scaleType="fitCenter"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_hamburgesa"
+            android:background="@android:color/transparent" />
+
+        <!-- Título NewForest -->
+        <TextView
+            android:id="@+id/titulo_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NewForest"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:layout_centerInParent="true" />
+
+        <!-- Icono de perfil -->
+        <ImageButton
+            android:id="@+id/icono_perfil"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="120dp"
+            android:src="@drawable/ic_perfil"
+            android:layout_toRightOf="@id/titulo_app"
+
+            android:background="@android:color/transparent"
+            android:contentDescription="Icono de perfil" />
+    </RelativeLayout>
+
+    <!-- Sección de Feed -->
+    <ScrollView
+        android:id="@+id/scrollViewFeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menu_hamburguesa"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp">
+
+            <Button
+                android:id="@+id/buscar_eventos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:text="Buscar eventos"
+                android:textSize="18sp"
+                android:background="@drawable/button_background"
+                android:textColor="@android:color/white"/>
+
+            <!-- Línea divisoria -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorOnBackground"/>
+
+            <!-- Texto de eventos destacados -->
+            <TextView
+                android:id="@+id/texto_eventos_destacados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Eventos Destacados"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center" />
+
+            <!-- Eventos a scrollear -->
+            <LinearLayout
+                android:id="@+id/eventos_container"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@color/colorBackground"
+                    android:layout_marginBottom="10dp">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_event_image"
+                        android:layout_marginEnd="10dp"
+                        android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Plantación comunitaria en San Vicente del Raspeig"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="sA"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorSecondary"
+                            android:layout_marginTop="5dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Puedes agregar más eventos aquí -->
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

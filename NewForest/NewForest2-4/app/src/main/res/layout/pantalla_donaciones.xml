@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/colorBackground">
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Atrás"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/black"
+        android:contentDescription="Atrás"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="-14dp" />
+
+    <!-- Título de la Pantalla -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sistema de Donaciones"
+        android:textSize="24sp"
+        android:layout_below="@id/buttonBack"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Selección de tipo de árbol -->
+    <TextView
+        android:id="@+id/tv_tree_type_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona el Tipo de Árbol"
+        android:textSize="18sp"
+        android:layout_below="@id/tv_title"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="8dp"/>
+
+    <Spinner
+        android:id="@+id/spinner_tree_types"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_tree_type_label"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_amount_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monto de Donación"
+        android:textSize="18sp"
+        android:layout_below="@id/spinner_tree_types"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- SeekBar para ajustar la cantidad -->
+    <SeekBar
+        android:id="@+id/seekBarAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_amount_label"
+        android:max="10000"
+        android:progress="5000"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- TextView para mostrar la cantidad de dinero ajustada -->
+    <TextView
+        android:id="@+id/tv_amount_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dinero: 1000€"
+        android:textSize="18sp"
+        android:layout_below="@id/seekBarAmount"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- TextView para mostrar la cantidad de árboles que se pueden donar -->
+    <TextView
+        android:id="@+id/tv_trees_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Árboles: 50"
+        android:textSize="18sp"
+        android:layout_below="@id/seekBarAmount"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Método de pago: tarjeta de crédito -->
+    <TextView
+        android:id="@+id/tv_payment_methods_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Método de Pago"
+        android:textSize="18sp"
+        android:layout_below="@id/tv_trees_count"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Campos para ingresar los datos de la tarjeta de crédito -->
+    <TextView
+        android:id="@+id/tv_card_number_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Número de Tarjeta"
+        android:textSize="16sp"
+        android:layout_below="@id/tv_payment_methods_label"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/et_card_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número de tarjeta"
+        android:inputType="number"
+        android:layout_below="@id/tv_card_number_label"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_expiry_date_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha de Caducidad"
+        android:textSize="16sp"
+        android:layout_below="@id/et_card_number"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/et_expiry_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="MM/AA"
+        android:inputType="text"
+        android:layout_below="@id/tv_expiry_date_label"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_cvc_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CVC"
+        android:textSize="16sp"
+        android:layout_below="@id/et_expiry_date"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/et_cvc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CVC"
+        android:inputType="number"
+        android:layout_below="@id/tv_cvc_label"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botón de Donar -->
+    <Button
+        android:id="@+id/btn_donate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Realizar Donación"
+        android:layout_below="@id/et_cvc"
+        android:layout_marginBottom="16dp"/>
+</RelativeLayout>

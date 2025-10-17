@@ -1,0 +1,166 @@
+
+* {
+    box-sizing: border-box;
+}
+
+.boton-menu {
+    display: none;
+    font-size: 30px;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.fixedmenu {
+    background-color: white;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: lightgrey
+  }
+
+#tituloHeader {
+    font-size: 40px;
+    height: 30px;
+    font-family: "Madimi One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#subtituloHeader {
+    margin-top: 5%;
+    height: 20px;
+    font-family: "Madimi One", serif;
+    font-style: italic;
+    font-weight: 400;
+    color: rgb(143, 32, 97);
+}
+
+#textoHeader {
+    display: block;
+    margin-left: 3%;
+    width: fit-content;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    height: 40px;
+    width: 100%;
+    padding: 5px;
+    top: 134px;
+    position: fixed;
+    z-index: 100;
+}
+
+a {
+    text-decoration: none;
+}
+
+#nav-logout {
+    white-space: nowrap;
+}
+
+.hover {
+    color: black;
+    font-style: normal;
+    margin-right: 30px;
+}
+
+.hover:hover {
+    color: white;
+}
+
+li {
+    list-style: none;
+}
+
+#footergeneral {
+    display: flex;
+    justify-content: center; /* Distribuye los elementos */
+    align-items: center; /* Alinea verticalmente */
+    padding: 5px;
+    background-color: white;
+}
+
+.e_footer {
+    margin: 0 7px;
+    color: black;
+}
+
+@media all and (width < 450px) {
+
+    span:nth-of-type(1) {
+        display: none;
+    }
+
+    span:nth-of-type(2) {
+        display: none;
+    }
+
+    .boton-menu {
+        display: block;
+        position: absolute;
+        z-index: 140;
+        border: none;
+        background: none;
+        color: black;
+        top: 152px;
+        left: 1%;
+    }
+
+    #tituloHeader {
+        font-size: 30px;
+        height: 30px;
+        font-family: "Madimi One", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    
+    #subtituloHeader {
+        font-size: 15px;
+        margin-top: 5%;
+        height: 20px;
+        font-family: "Madimi One", serif;
+        font-style: italic;
+        font-weight: 400;
+        color: rgb(143, 32, 97);
+    }
+
+    #textoHeader {
+        display: block;
+        position: relative;
+        margin-left: 3%;
+        width: fit-content;
+        top: 20px;
+        margin: 0;
+    }
+}
+
+@media all and (width > 400px) and (width < 600px) {
+
+    span:nth-of-type(2) {
+        display: none;
+    }
+
+    .menu {
+        gap: 20px;
+    }
+
+}

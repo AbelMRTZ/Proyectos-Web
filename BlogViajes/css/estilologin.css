@@ -1,0 +1,150 @@
+main {
+    margin-top: 180px;
+}
+
+.h1principal {
+    display: flex;
+    position: relative;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin-top: 200px;
+    margin-bottom: 5px;
+}
+
+.formlogin {
+
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    top: 13px;
+}
+
+.usuariologin {
+    display: flex;
+    flex-direction: column; /* Pone los elementos en columna */
+    width: 200px; /* Ajusta el ancho */
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+#usuariolabel {
+    display: flex;
+    background-color: orange;
+    border: 2px black solid;
+    padding: 5px;
+}
+
+#enlaceregistro {
+    color: black;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    position: relative;
+    display: flex;
+    font-size: 15px;
+    padding: 3px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.contraseñalogin {
+    display: flex;
+    flex-direction: column; /* Pone los elementos en columna */
+    width: 200px; /* Ajusta el ancho */
+    gap: 5px;
+    margin-bottom: 20px;
+    height: 100%;
+    margin: 0;
+}
+
+#contraseñalabel {
+    display: flex;
+    background-color: orange;
+    border: 2px black solid;
+    padding: 5px;
+}
+
+.botones {
+    display: flex;
+    position: relative;
+    top: 5px;
+    margin-left: 15%;
+}
+
+#usuarioinput:hover {
+    background-color: rgb(251, 212, 140);
+}
+
+#contraseñainput:hover {
+    background-color: rgb(251, 212, 140);
+}
+
+#usuarioinput {
+    border: 1px solid black;
+}
+
+#contraseñainput {
+    border: 1px solid black;
+}
+
+#usuarioinput:focus {
+    background-color: rgb(251, 212, 140);
+    border: 3px solid black;
+
+}
+
+#contraseñainput:focus {
+    background-color: rgb(251, 212, 140);
+    border: 3px solid black;
+
+}
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fija en la pantalla */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* Fondo oscuro con opacidad */
+}
+
+/* Estilos del contenido del modal */
+.modal-content {
+    background-color: #fff;
+    position: relative;
+    margin: 10% auto; /* Ajusta el margen superior */
+    padding: 30px 20px 20px; /* Más padding arriba para el botón de cerrar */
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Estilo del botón de cerrar */
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal.active {
+    display: block;
+}
