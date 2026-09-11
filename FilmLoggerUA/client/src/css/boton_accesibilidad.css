@@ -1,0 +1,35 @@
+/* ── AccessibilityFAB.css ── */
+
+.accessibility-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 40px;
+
+  width: 64px;
+  height: 64px;
+
+  background-color: var(--color-brand);
+  border: none;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 9999;
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.accessibility-fab:hover {
+  transform: scale(1.08);
+  background-color: var(--color-brand-dark);
+}
+
+.accessibility-fab img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}

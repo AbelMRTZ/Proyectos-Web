@@ -1,0 +1,151 @@
+/* ── CalificarPelicula.css ── */
+
+.calificarpeli-main {
+  min-height: calc(100vh - 90px);
+  background: var(--color-bg);
+  display: flex;
+  justify-content: center;
+  padding: 36px 20px 60px;
+}
+
+.calificarpeli-container {
+  width: 100%;
+  max-width: 580px;
+}
+
+/* ── Bloque de información de la película ── */
+.calificarpeli-preview {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin: 24px 0 28px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+.calificarpeli-poster {
+  flex-shrink: 0;
+  width: 100px;
+  max-height: 150px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+.calificarpeli-film-info h1 {
+  margin: 0 0 8px;
+  font-size: 1.45rem;
+  color: var(--color-brand);
+  line-height: 1.2;
+}
+
+.calificarpeli-director,
+.calificarpeli-year {
+  margin: 4px 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+.calificarpeli-sinopsis {
+  margin: 10px 0 0;
+  color: var(--color-text-subtle);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Bloque de puntuación ── */
+.calificarpeli-score-block {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.calificarpeli-score-label {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.calificarpeli-slider {
+  width: 100%;
+  accent-color: var(--color-brand);
+  height: 6px;
+  cursor: pointer;
+}
+
+.calificarpeli-score-display {
+  text-align: center;
+}
+
+.calificarpeli-score-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-brand);
+  font-family: var(--font-display);
+  line-height: 1;
+}
+
+/* ── Botón guardar ── */
+.calificarpeli-save-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius-lg);
+  background: var(--color-brand);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.calificarpeli-save-btn:hover:not(:disabled) {
+  background: var(--color-brand-dark);
+}
+
+.calificarpeli-save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Mensajes ── */
+.calificarpeli-error {
+  margin-bottom: 12px;
+}
+
+.calificarpeli-success {
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  background: var(--color-success-bg);
+  color: var(--color-success-text);
+  border: 1px solid var(--color-success-border);
+  font-weight: 600;
+}
+
+/* ── Responsive ── */
+@media (max-width: 500px) {
+  .calificarpeli-preview {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .calificarpeli-poster {
+    width: 120px;
+    max-height: 180px;
+  }
+}

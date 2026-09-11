@@ -1,0 +1,95 @@
+/* ── CalificarBuscar.css ── */
+
+.calificar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.calificar-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 12px;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease;
+}
+
+.calificar-card:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.calificar-poster {
+  flex-shrink: 0;
+  width: 56px;
+  height: 80px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--color-bg-detail);
+}
+
+.calificar-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.calificar-poster-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  color: var(--color-text-subtle);
+  text-align: center;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.calificar-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.calificar-info h3 {
+  margin: 0 0 4px;
+  font-size: 0.97rem;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calificar-meta {
+  margin: 2px 0 0;
+  font-size: 0.82rem;
+  color: var(--color-text-subtle);
+}
+
+.calificar-add-btn {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-brand);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+}
+
+.calificar-add-btn:hover {
+  background: var(--color-brand-dark);
+  transform: scale(1.1);
+}

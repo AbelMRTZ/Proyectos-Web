@@ -1,0 +1,208 @@
+.editar-perfil-page {
+  background: var(--color-perfil-bg);
+  min-height: 100vh;
+}
+
+.editar-perfil-main {
+  max-width: 760px;
+  margin: 32px auto;
+  padding: 0 20px 40px;
+}
+
+.editar-perfil-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+.editar-perfil-card h1 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: var(--color-brand);
+}
+
+.editar-perfil-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.editar-perfil-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.editar-perfil-form input[type="text"],
+.editar-perfil-form input[type="file"] {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  background: var(--color-bg-input);
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+.editar-perfil-form input[type="text"]:focus {
+  outline: none;
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 3px rgba(177, 18, 38, 0.12);
+}
+
+.editar-perfil-preview-block {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+}
+
+.editar-perfil-preview {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.editar-perfil-preview-text {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.editar-perfil-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.editar-perfil-actions-right {
+  display: flex;
+  gap: 12px;
+}
+
+.home-btn.danger {
+  background: #b11226;
+  color: #ffffff;
+  border: none;
+}
+
+.home-btn.danger:hover {
+  background: #7f0d1b;
+}
+
+@media (max-width: 768px) {
+  .editar-perfil-main {
+    padding: 0 14px 24px;
+  }
+
+  .editar-perfil-card {
+    padding: 22px 18px;
+  }
+
+  .editar-perfil-preview-block {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .editar-perfil-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .editar-perfil-actions-right {
+    flex-direction: column-reverse;
+  }
+
+  .editar-perfil-actions .home-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.delete-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.58);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.delete-modal {
+  width: 100%;
+  max-width: 440px;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  padding: 26px;
+}
+
+.delete-modal h2 {
+  margin: 0 0 10px;
+  color: var(--color-brand);
+}
+
+.delete-modal p {
+  margin: 0 0 22px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.delete-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .delete-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .delete-modal-actions .home-btn {
+    width: 100%;
+  }
+}
+
+.delete-modal .home-btn.secondary {
+  background: var(--color-bg-card);
+  color: var(--color-brand);
+  border: 1px solid var(--color-border);
+}
+
+.delete-modal .home-btn.secondary:hover {
+  background: rgba(177, 18, 38, 0.08);
+}
+
+.editar-perfil-actions .home-btn.primary {
+  border: 1px solid var(--color-border) !important;
+  box-shadow: inset 0 0 0 1px var(--color-border);
+}
+
+.editar-perfil-actions .home-btn.primary:hover {
+  background: var(--color-brand);
+  color: #ffffff;
+  border-color: var(--color-brand) !important;
+}
+
+.editar-perfil-actions .home-btn.secondary {
+  background: var(--color-bg-card);
+  color: var(--color-brand);
+  border: 1px solid var(--color-border);
+}
+
+.editar-perfil-actions .home-btn.secondary:hover {
+  background: rgba(177, 18, 38, 0.08);
+}

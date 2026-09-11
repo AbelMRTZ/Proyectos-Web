@@ -1,0 +1,347 @@
+/* ── Home.css ── */
+
+.home-wrapper {
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.home-top-header {
+  height: 72px;
+  background: var(--color-header-bg);
+  color: var(--color-header-text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  box-shadow: var(--shadow-header);
+}
+
+.home-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.home-brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.home-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.home-user {
+  font-size: 0.95rem;
+}
+
+.home-btn {
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.home-btn.primary {
+  background: var(--color-bg-card);
+  color: var(--color-brand);
+  font-weight: 600;
+}
+
+.home-btn.primary:hover {
+  background: var(--color-bg-detail);
+}
+
+.home-btn.secondary {
+  background: transparent;
+  color: var(--color-header-text);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.home-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Hero ── */
+.home-hero {
+  height: 280px;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1400&auto=format&fit=crop")
+      center/cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.home-hero-overlay {
+  color: #ffffff;
+  max-width: 720px;
+  padding: 0 40px;
+}
+
+.home-hero-overlay h1 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.home-hero-overlay p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* ── Contenido ── */
+.home-content {
+  padding: 32px 40px 48px;
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  margin: 0;
+  color: var(--color-brand);
+  font-size: 1.8rem;
+}
+
+.home-message,
+.home-error {
+  margin-top: 18px;
+  font-size: 1rem;
+}
+
+.home-error {
+  color: var(--color-brand);
+  font-weight: 600;
+}
+
+/* ── Grid de películas ── */
+.films-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.film-card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.film-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.film-poster-wrapper {
+  width: 100%;
+  height: 360px;
+  background: var(--color-bg-detail);
+}
+
+.film-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.film-poster-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-soft);
+  font-weight: 600;
+}
+
+.film-card-body {
+  padding: 18px;
+}
+
+.film-card-body h3 {
+  margin: 0 0 12px;
+  font-size: 1.2rem;
+  color: var(--color-text);
+}
+
+.film-meta {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.film-desc {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-text-subtle);
+}
+
+.film-trailer-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--color-brand);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.film-trailer-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Nav links ── */
+.home-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.home-nav-link {
+  color: var(--color-header-text);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.home-nav-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ── Search ── */
+.home-search-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 380px;
+  margin: 0 16px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: background 0.2s;
+  border: 1px solid transparent;
+}
+
+.home-search-wrapper:focus-within {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.home-search {
+  flex: 1;
+  padding: 8px 12px 8px 16px;
+  border: none;
+  background: transparent;
+  font-size: 0.9rem;
+  color: #ffffff;
+  outline: none;
+  min-width: 0;
+}
+
+.home-search::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.home-search-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px 12px 6px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.home-search-btn:hover {
+  opacity: 1;
+}
+
+.home-search-btn .icon {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  .home-top-header {
+    height: auto;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .home-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .home-hero {
+    height: 200px;
+  }
+
+  .home-hero-overlay {
+    padding: 0 20px;
+  }
+
+  .home-hero-overlay h1 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+
+  .home-hero-overlay p {
+    font-size: 0.95rem;
+  }
+
+  .home-content {
+    padding: 20px 16px 36px;
+  }
+
+  .film-poster-wrapper {
+    height: 280px;
+  }
+
+  .films-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 14px;
+  }
+
+  .film-card-body {
+    padding: 12px;
+  }
+
+  .film-card-body h3 {
+    font-size: 1rem;
+  }
+
+  .home-nav {
+    display: none;
+  }
+
+  .home-search-wrapper {
+    max-width: 100%;
+    margin: 8px 0 0;
+  }
+
+}
+
+.icon {
+  height: 2rem;
+  width: 2rem;
+}

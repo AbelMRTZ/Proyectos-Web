@@ -1,0 +1,511 @@
+/* ══════════════════════════════════════════
+   NAVBAR.CSS — FilmLogger
+   ══════════════════════════════════════════ */
+
+/* ── Base ───────────────────────────────── */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #b00020;
+  padding: 0 2rem;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  width: 100%;
+  overflow: visible;
+}
+
+/* ── Logo ───────────────────────────────── */
+.navbar-brand a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.navbar-brand a:hover { opacity: 0.85; }
+
+.navbar-brand img {
+  height: 32px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+/* ── Links nav (admin escritorio) ───────── */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.navbar-link {
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.navbar-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ── Buscador ───────────────────────────── */
+.navbar-search-wrapper {
+  flex: 1;
+  min-width: 0;
+  max-width: 400px;
+}
+
+.navbar-search-wrapper form {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 0 0.5rem 0 1rem;
+  height: 38px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.navbar-search-wrapper form:focus-within {
+  background: #fff;
+  border-color: #fff;
+}
+
+.navbar-search {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  background: transparent;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.navbar-search::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.navbar-search-wrapper form:focus-within .navbar-search {
+  color: #1a1a1a;
+}
+
+.navbar-search-wrapper form:focus-within .navbar-search::placeholder {
+  color: #aaa;
+}
+
+.navbar-search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 0.3rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-search-btn:hover { opacity: 0.7; }
+
+.navbar-search-btn img {
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-search-wrapper form:focus-within .navbar-search-btn img {
+  opacity: 0.5;
+}
+
+/* ── Usuario (derecha) ──────────────────── */
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.navbar-user-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  transition: background 0.18s ease;
+  flex-shrink: 0;
+}
+
+.navbar-user-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.navbar-user-link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.navbar-user-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.navbar-username {
+  font-size: 0.95rem;
+  font-weight: 500;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Cerrar sesión ──────────────────────── */
+/* DECLARACIÓN ÚNICA fusionada */
+.navbar-logout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  color: rgba(255, 255, 255, 0.85);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-height: 36px;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.navbar-logout:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+.navbar-logout:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Partes internas del botón logout */
+.navbar-logout-text { display: inline; }
+.navbar-logout-icon { display: none; flex-shrink: 0; }
+
+/* ── Login / Register ───────────────────── */
+.navbar-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.18s ease, color 0.18s ease, opacity 0.18s ease;
+}
+
+.navbar-btn.secondary {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.navbar-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-btn.primary {
+  background: #fff;
+  color: #b00020;
+}
+
+.navbar-btn.primary:hover { opacity: 0.9; }
+
+.navbar-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ── Accesibilidad ──────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ── Hamburguesa ────────────────────────── */
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 6px;
+  flex-shrink: 0;
+  transition: background 0.18s ease;
+}
+
+.navbar-hamburger:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-hamburger:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.navbar-hamburger-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Menú admin (oculto por defecto) */
+.navbar-admin-menu {
+  display: none;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+
+/* 1 · Escritorio estrecho ≤1275px */
+@media (max-width: 1275px) {
+  .navbar {
+    gap: 1rem;
+    padding: 0 1.25rem;
+  }
+
+  .navbar-search-wrapper {
+    max-width: 300px;
+  }
+
+  .navbar-username {
+    max-width: 90px;
+  }
+
+  /* Logout pasa a icono */
+  .navbar-logout {
+    min-width: 36px;
+    padding: 0.3rem;
+    border-radius: 8px;
+  }
+
+  .navbar-logout-text { display: none; }
+  .navbar-logout-icon { display: block; }
+
+  .navbar-link {
+    font-size: 0.9rem;
+    padding: 0.35rem 0.6rem;
+  }
+}
+
+/* 2 · Tablet horizontal ≤980px */
+@media (max-width: 980px) {
+  .navbar {
+    gap: 0.75rem;
+    padding: 0 1rem;
+  }
+
+  .navbar-brand img { height: 28px; }
+
+  .navbar-brand a span { font-size: 1.1rem; }
+
+  .navbar-search-wrapper { max-width: 200px; }
+
+  .navbar-search { font-size: 0.85rem; }
+
+  .navbar-link {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .navbar-user { gap: 0.5rem; }
+
+  .navbar-btn {
+    font-size: 0.82rem;
+    padding: 0.3rem 0.65rem;
+  }
+
+  .navbar-username { display: none; }
+}
+
+/* 3 · Móvil / tablet vertical ≤768px */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.75rem 1rem;
+    gap: 0.6rem;
+    position: relative;
+  }
+
+  /* Fila 1: logo + usuario + hamburguesa */
+  .navbar-brand {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .navbar-brand a span { font-size: 1rem; }
+
+  .navbar-links--desktop { display: none; }
+
+  .navbar-user {
+    margin-left: 0;
+    gap: 0.45rem;
+    flex-shrink: 0;
+  }
+
+  /* Fila 2: buscador ancho completo */
+  .navbar-search-wrapper {
+    order: 3;
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .navbar-search-wrapper form { height: 40px; }
+
+  .navbar-search { font-size: 0.9rem; }
+
+  .navbar-username { display: none; }
+
+  .navbar-logout {
+    min-width: 36px;
+    padding: 0.3rem;
+    font-size: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .navbar-logout-text { display: none; }
+  .navbar-logout-icon { display: block; }
+
+  .navbar-btn {
+    font-size: 0.82rem;
+    padding: 0.3rem 0.65rem;
+  }
+
+  .navbar-hamburger { display: flex; }
+
+  /* Fila 3: menú admin desplegable */
+  .navbar-admin-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    order: 4;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease, padding 0.25s ease;
+    padding: 0 0.25rem;
+  }
+
+  .navbar-admin-menu--open {
+    max-height: 200px;
+    padding: 0.5rem 0.25rem;
+  }
+
+  .navbar-admin-link {
+    color: rgba(255, 255, 255, 0.92);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.7rem 0.75rem;
+    border-radius: 6px;
+    transition: background 0.18s ease;
+  }
+
+  .navbar-admin-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+
+  .navbar-admin-link:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+}
+
+/* 4 · Móviles pequeños ≤480px */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.65rem 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .navbar-brand img { height: 24px; }
+
+  .navbar-brand a {
+    gap: 0.4rem;
+  }
+
+  .navbar-brand a span { font-size: 0.9rem; }
+
+  .navbar-user { gap: 0.35rem; }
+
+  .navbar-btn {
+    font-size: 0.78rem;
+    padding: 0.28rem 0.55rem;
+  }
+
+  .navbar-logout {
+    min-width: 34px;
+    padding: 0.28rem;
+  }
+
+  .navbar-search-wrapper form {
+    height: 38px;
+    padding: 0 0.4rem 0 0.75rem;
+  }
+
+  .navbar-search { font-size: 0.85rem; }
+
+  .navbar-search::placeholder { font-size: 0.82rem; }
+
+  .navbar-hamburger { padding: 0.3rem; }
+
+  .navbar-hamburger-bar { width: 20px; }
+}

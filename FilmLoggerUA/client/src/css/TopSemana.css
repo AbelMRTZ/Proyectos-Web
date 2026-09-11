@@ -1,0 +1,96 @@
+.top-semana {
+  padding: 2rem 15rem 1rem;
+}
+
+@media (max-width: 1400px) {
+  .top-semana { padding: 2rem 6rem 1rem; }
+}
+
+@media (max-width: 1024px) {
+  .top-semana { padding: 1.5rem 2.5rem 1rem; }
+}
+
+@media (max-width: 640px) {
+  .top-semana { padding: 1.25rem 1rem 1rem; }
+  .top-semana-header h2 { font-size: 1.2rem; }
+}
+
+.top-semana-header {
+  margin-bottom: 1rem;
+}
+
+.top-semana-header h2 {
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.2rem;
+}
+
+.top-semana-header p {
+  color: var(--color-text-subtle);
+}
+
+.top-semana-carousel {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.top-semana-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.top-semana-item {
+  flex-shrink: 0;
+  text-decoration: none;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.top-semana-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.top-semana-item:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+}
+
+.top-semana-poster {
+  width: 110px;
+  height: 165px;
+  object-fit: cover;
+  display: block;
+}
+
+.top-semana-placeholder {
+  width: 110px;
+  height: 165px;
+  background: var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-subtle);
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.top-semana-footer {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.top-semana-ver-todas {
+  color: var(--color-brand-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.top-semana-ver-todas:hover {
+  color: var(--color-brand);
+  text-decoration: underline;
+}

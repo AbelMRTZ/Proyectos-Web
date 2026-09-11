@@ -1,0 +1,200 @@
+/* ── Layout ── */
+.form-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2.5rem 1rem;
+  background: #0f0f13;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #e2e2e2;
+}
+
+.form-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+/* ── Form card ── */
+.movie-form {
+  background: #1a1a22;
+  border: 1px solid #2e2e3e;
+  border-radius: 14px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Groups ── */
+.form-group {
+  display:  flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #9898b0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Inputs ── */
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+  background: #0f0f13;
+  border: 1px solid #2e2e3e;
+  border-radius: 8px;
+  color: #e2e2e2;
+  font-size: 0.95rem;
+  padding: 0.65rem 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+}
+
+/* ── File section ── */
+.file-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: #12121a;
+  border: 1px dashed #2e2e3e;
+  border-radius: 10px;
+}
+
+input[type="file"] {
+  color: #9898b0;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+/* ── Portada preview ── */
+.file-preview {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.portada-preview {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #2e2e3e;
+}
+
+/* ── Media file list ── */
+.file-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.file-list li {
+  font-size: 0.85rem;
+  color: #b0b0c8;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.file-badge {
+  background: #6c63ff22;
+  color: #a09cff;
+  border: 1px solid #6c63ff44;
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.file-name {
+  font-size: 0.85rem;
+  color: #b0b0c8;
+}
+
+/* ── Status messages ── */
+.status-message {
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status-message.success {
+  background: #0d2e1a;
+  border: 1px solid #1a5c36;
+  color: #4ade80;
+}
+
+.status-message.error {
+  background: #2e0d0d;
+  border: 1px solid #5c1a1a;
+  color: #f87171;
+}
+
+/* ── Submit button ── */
+.submit-btn {
+  padding: 0.85rem;
+  background: #6c63ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 0.4rem;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #574fd6;
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Responsive ── */
+@media (max-width: 500px) {
+  .form-row {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,107 @@
+.tendencias {
+  padding: 1rem 15rem 2rem;
+}
+
+@media (max-width: 1400px) {
+  .tendencias { padding: 1rem 6rem 2rem; }
+}
+
+@media (max-width: 1024px) {
+  .tendencias { padding: 1rem 2.5rem 2rem; }
+}
+
+@media (max-width: 640px) {
+  .tendencias { padding: 1rem 1rem 2rem; }
+  .tendencias-header h2 { font-size: 1.2rem; }
+  .tendencia-sinopsis { display: none; }
+}
+
+.tendencias-header { margin-bottom: 0.75rem; }
+.tendencias-header h2 { font-weight: 700; color: var(--color-text); }
+.tendencias-header p { color: var(--color-text-subtle); }
+
+.tendencias-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tendencia-tab {
+  background: var(--color-bg-detail);
+  color: var(--color-text);
+  border: none;
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.tendencia-tab.active { background: var(--color-brand); color: #fff; }
+.tendencia-tab:focus-visible { outline: 2px solid var(--color-brand); outline-offset: 2px; }
+
+.tendencias-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.tendencia-card {
+  background: var(--color-bg-detail);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tendencia-card-inner {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.tendencia-card-inner:hover .tendencia-btn { background: var(--color-brand-dark); color: #fff; }
+
+.tendencia-poster {
+  width: 90px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.tendencia-poster-placeholder {
+  width: 90px;
+  height: 130px;
+  background: var(--color-border);
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.tendencia-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.tendencia-info h3 { color: var(--color-text); }
+.tendencia-year { font-weight: 400; color: var(--color-text-subtle); }
+.tendencia-meta { color: var(--color-text-subtle); }
+.tendencia-sinopsis { color: var(--color-text-muted); line-height: 1.4; }
+
+.stars { display: flex; gap: 2px; }
+.star { color: var(--color-border); }
+.star.filled { color: var(--color-stars); }
+
+.tendencia-btn {
+  display: inline-block;
+  margin-top: 0.25rem;
+  background: var(--color-brand);
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+@media (max-width: 768px) {
+  .tendencias-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,204 @@
+/* ══════════════════════════════════════════════════════
+   variables.css  —  Sistema de tokens globales
+   Importar PRIMERO en el entry point (main.jsx / index.css)
+   ══════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700&display=swap');
+
+/* ─────────────────────────────────────────────────────
+   TEMA POR DEFECTO (claro)
+───────────────────────────────────────────────────── */
+:root {
+  /* — Marca — */
+  --color-brand:        #b11226;
+  --color-brand-dark:   #92001a;
+  --color-brand-light:  #d40000;
+  --color-brand-muted:  #c94060;   /* tabs, elementos secundarios */
+
+  /* — Fondo — */
+  --color-bg:           #f6f6f7;
+  --color-bg-card:      #ffffff;
+  --color-bg-subtle:    #f6f6f7;   /* file-preview, list items… */
+  --color-bg-input:     #fafafa;
+  --color-bg-detail:    #e8e8e8;   /* tarjetas gris medio (Pelicula) */
+
+  /* — Texto — */
+  --color-text:         #1f1f1f;
+  --color-text-muted:   #4c4c4c;
+  --color-text-subtle:  #5b5b5b;
+  --color-text-soft:    #666666;
+
+  /* — Bordes — */
+  --color-border:       #e0e0e0;
+  --color-border-soft:  #f0f0f0;
+
+  /* — Estado: éxito — */
+  --color-success-bg:   #edf7f0;
+  --color-success-text: #1a6b38;
+  --color-success-border:#b6dfc5;
+
+  /* — Estado: error — */
+  --color-error-bg:     #fdf0f0;
+  --color-error-text:   #b11226;
+  --color-error-border: #f5b8bf;
+
+  /* — Especiales (perfil, badge) — */
+  --color-perfil-bg:    radial-gradient(circle at top right, #fff5e8 0%, #f7f0ea 45%, #f3efec 100%);
+  --color-warning-bg:   #fff3cd;
+  --color-warning-text: #7a5700;
+  --color-warning-border:#f0de9c;
+  --color-badge-edad:   #f5c518;
+  --color-stars:        #d97706;
+
+  /* — Header (fijo en rojo siempre) — */
+  --color-header-bg:    #b11226;
+  --color-header-text:  #ffffff;
+
+  /* — Checkbox/chip activo — */
+  --color-chip-bg:        #f5f5f5;
+  --color-chip-bg-active: #dcdcdc;
+  --color-chip-border:    #d3d3d3;
+  --color-chip-text:      #444444;
+  --color-chip-text-active:#111111;
+
+  /* — Sombras — */
+  --shadow-card:   0 8px 20px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 12px 26px rgba(0, 0, 0, 0.12);
+  --shadow-header: 0 2px 10px rgba(0, 0, 0, 0.15);
+
+  /* — Radios — */
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+
+  /* — Tipografía — */
+  --font-body:    'Nunito', sans-serif;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-size-base: 1rem;          /* sobreescrito por data-font */
+  --font-size-sm:   0.9rem;
+  --font-size-xs:   0.85rem;
+}
+
+/* ─────────────────────────────────────────────────────
+   OVERRIDES DE TEMA
+───────────────────────────────────────────────────── */
+
+/* ── Oscuro ── */
+[data-theme="dark"] {
+  --color-bg:           #121212;
+  --color-bg-card:      #1e1e1e;
+  --color-bg-subtle:    #2a2a2a;
+  --color-bg-input:     #2a2a2a;
+  --color-bg-detail:    #2c2c2c;
+
+  --color-text:         #f0f0f0;
+  --color-text-muted:   #bbbbbb;
+  --color-text-subtle:  #999999;
+  --color-text-soft:    #888888;
+
+  --color-border:       #3a3a3a;
+  --color-border-soft:  #2e2e2e;
+
+  --color-success-bg:   #0d2e1a;
+  --color-success-text: #5cba8a;
+  --color-success-border:#1e5c35;
+
+  --color-error-bg:     #2e0a10;
+  --color-error-text:   #f07080;
+  --color-error-border: #6b1c26;
+
+  --color-perfil-bg:    radial-gradient(circle at top right, #1c1612 0%, #161210 45%, #111010 100%);
+  --color-warning-bg:   #2a2000;
+  --color-warning-text: #e0b040;
+  --color-warning-border:#5a4500;
+
+  --color-chip-bg:        #2a2a2a;
+  --color-chip-bg-active: #3d3d3d;
+  --color-chip-border:    #444444;
+  --color-chip-text:      #cccccc;
+  --color-chip-text-active:#ffffff;
+
+  --shadow-card:   0 8px 20px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 12px 26px rgba(0, 0, 0, 0.6);
+  --shadow-header: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Alto contraste ── */
+[data-theme="high-contrast"] {
+  --color-brand:        #ff0000;
+  --color-brand-dark:   #cc0000;
+  --color-brand-light:  #ff3333;
+
+  --color-bg:           #000000;
+  --color-bg-card:      #000000;
+  --color-bg-subtle:    #111111;
+  --color-bg-input:     #000000;
+  --color-bg-detail:    #111111;
+
+  --color-text:         #ffffff;
+  --color-text-muted:   #ffffff;
+  --color-text-subtle:  #dddddd;
+  --color-text-soft:    #cccccc;
+
+  --color-border:       #ffffff;
+  --color-border-soft:  #aaaaaa;
+
+  --color-success-bg:   #003300;
+  --color-success-text: #00ff00;
+  --color-success-border:#00aa00;
+
+  --color-error-bg:     #330000;
+  --color-error-text:   #ff4444;
+  --color-error-border: #aa0000;
+
+  --color-perfil-bg:    #000000;
+  --color-warning-bg:   #332200;
+  --color-warning-text: #ffcc00;
+  --color-warning-border:#aa8800;
+
+  --color-chip-bg:        #111111;
+  --color-chip-bg-active: #333333;
+  --color-chip-border:    #ffffff;
+  --color-chip-text:      #ffffff;
+  --color-chip-text-active:#ffffff;
+
+  --shadow-card:   0 0 0 2px #ffffff;
+  --shadow-card-hover: 0 0 0 3px #ffffff;
+  --shadow-header: none;
+}
+
+/* ─────────────────────────────────────────────────────
+   OVERRIDES DE TAMAÑO DE FUENTE
+───────────────────────────────────────────────────── */
+
+[data-font="normal"] {
+  font-size: 16px;
+}
+
+[data-font="large"] {
+  font-size: 20px;
+}
+
+/* ─────────────────────────────────────────────────────
+   RESET MÍNIMO GLOBAL
+───────────────────────────────────────────────────── */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}

@@ -1,0 +1,33 @@
+.sorprendeme {
+  background: var(--color-bg-detail);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  margin: 1rem 2rem 2rem;
+  border-radius: 12px;
+}
+
+.sorprendeme h2 {
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+}
+
+.sorprendeme p {
+  color: var(--color-text-subtle);
+  margin-bottom: 1.25rem;
+}
+
+.sorprendeme-btn {
+  background: var(--color-brand);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.65rem 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.sorprendeme-btn:hover { background: var(--color-brand-dark); transform: scale(1.03); }
+.sorprendeme-btn:disabled { background: var(--color-border); cursor: not-allowed; transform: none; color: #111}
+.sorprendeme-btn:focus-visible { outline: 2px solid var(--color-brand); outline-offset: 3px; }
