@@ -1,0 +1,619 @@
+openapi: 3.0.0
+info:
+  title: API Registro Horario
+  version: 1.0.0
+servers:
+- url: http://localhost:3001
+paths:
+  /usuarios:
+    get:
+      operationId: usuariosGET
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Usuario"
+                type: array
+          description: Lista de usuarios
+      summary: Obtener todos los usuarios
+    post:
+      operationId: usuariosPOST
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UsuarioCreate"
+        required: true
+      responses:
+        "201":
+          description: Usuario creado
+      summary: Crear usuario
+  /usuarios/{id}:
+    delete:
+      operationId: usuariosIdDELETE
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: Usuario eliminado
+      summary: Eliminar usuario
+    get:
+      operationId: usuariosIdGET
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Usuario"
+          description: Usuario
+      summary: Obtener usuario por id
+    put:
+      operationId: usuariosIdPUT
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UsuarioCreate"
+        required: true
+      responses:
+        "200":
+          description: Usuario actualizado
+      summary: Actualizar usuario
+  /trabajos:
+    get:
+      operationId: trabajosGET
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Trabajo"
+                type: array
+          description: Lista de trabajos
+      summary: Obtener todos los trabajos
+    post:
+      operationId: trabajosPOST
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TrabajoCreate"
+        required: true
+      responses:
+        "201":
+          description: Trabajo creado
+      summary: Crear trabajo
+  /trabajos/{id}:
+    delete:
+      operationId: trabajosIdDELETE
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: Trabajo eliminado
+      summary: Eliminar trabajo
+    get:
+      operationId: trabajosIdGET
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Trabajo"
+          description: Trabajo
+      summary: Obtener trabajo por id
+    put:
+      operationId: trabajosIdPUT
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TrabajoCreate"
+        required: true
+      responses:
+        "200":
+          description: Trabajo actualizado
+      summary: Actualizar trabajo
+  /fichajes:
+    get:
+      operationId: fichajesGET
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      parameters:
+      - explode: true
+        in: query
+        name: idUsuario
+        required: false
+        schema:
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: desde
+        required: false
+        schema:
+          format: date
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: hasta
+        required: false
+        schema:
+          format: date
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Fichaje"
+                type: array
+          description: Lista de fichajes
+      summary: Listar fichajes
+    post:
+      operationId: fichajesPOST
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FichajeCreate"
+        required: true
+      responses:
+        "201":
+          description: Fichaje creado
+      summary: Crear fichaje (entrada)
+      x-eov-operation-handler: controllers/DefaultController
+  /fichajes/{id}:
+    delete:
+      operationId: fichajesIdDELETE
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: Fichaje eliminado
+      summary: Eliminar fichaje
+    get:
+      operationId: fichajesIdGET
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Fichaje"
+          description: Fichaje
+      summary: Obtener fichaje por id
+    put:
+      operationId: fichajesIdPUT
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FichajeUpdate"
+        required: true
+      responses:
+        "200":
+          description: Fichaje actualizado
+      summary: Actualizar fichaje (cerrar con fecha salida)
+    # === ENDPOINTS PERSONALIZADOS ===
+  /fichajes/activo:
+    get:
+      operationId: fichajesActivoGET
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      parameters:
+      - explode: true
+        in: query
+        name: IdUsuario
+        required: true
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Fichaje"
+          description: Fichaje activo encontrado
+        "404":
+          description: No hay fichaje activo
+      summary: Buscar fichaje activo
+
+  /fichajes/hoy:
+    get:
+      operationId: fichajesHoyGET
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      parameters:
+      - explode: true
+        in: query
+        name: IdUsuario
+        required: true
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Fichaje"
+                type: array
+          description: Fichajes de hoy
+      summary: Obtener fichajes del día actual
+
+  /fichajes/iniciar:
+    post:
+      operationId: fichajesIniciarPOST
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                IdUsuario:
+                  type: integer
+                IdTrabajo:
+                  type: integer
+                GeolocalizacionLatitud:
+                  type: number
+                GeolocalizacionLongitud:
+                  type: number
+              required:
+                - IdUsuario
+                - IdTrabajo
+        required: true
+      responses:
+        "201":
+          description: Fichaje iniciado
+      summary: Iniciar nuevo fichaje
+
+  /fichajes/finalizar/{id}:
+    put:
+      operationId: fichajesFinalizarPUT
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                GeolocalizacionLatitud:
+                  type: number
+                GeolocalizacionLongitud:
+                  type: number
+        required: false
+      responses:
+        "200":
+          description: Fichaje finalizado
+      summary: Finalizar fichaje
+  /fichajes/rango:
+    get:
+      operationId: fichajesRangoGET
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService
+      parameters:
+      - explode: true
+        in: query
+        name: desde
+        required: true
+        schema:
+          format: date
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: hasta
+        required: true
+        schema:
+          format: date
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: IdUsuario
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Fichaje"
+                type: array
+          description: Lista de fichajes en el rango
+      summary: Obtener fichajes entre dos fechas (rango inclusivo)
+
+  /usuarios/login:
+    post:
+      operationId: usuariosLoginPOST
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Usuario:
+                  type: string
+                Clave:
+                  type: string
+              required:
+                - Usuario
+                - Clave
+        required: true
+      responses:
+        "200":
+          description: Login exitoso
+        "401":
+          description: Credenciales incorrectas
+      summary: Login de usuario
+
+  /apikey:
+    post:
+      operationId: apikeyPOST
+      x-openapi-router-controller: DefaultController
+      x-openapi-router-service: DefaultService 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: false
+      responses:
+        "201":
+          description: API Key creada
+      summary: Crear nueva API Key
+      x-eov-operation-handler: controllers/DefaultController
+  /apikey/{key}:
+    get:
+      operationId: apikeyKeyGET
+      parameters:
+      - explode: false
+        in: path
+        name: key
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: true/false
+      summary: Verificar si la apikey existe
+components:
+  schemas:
+    Usuario:
+      example:
+        Nombre: Nombre
+        Usuario: Usuario
+        IdUsuario: 0
+        Clave: Clave
+      properties:
+        IdUsuario:
+          type: integer
+        Nombre:
+          type: string
+        Usuario:
+          type: string
+        Clave:
+          type: string
+      type: object
+    UsuarioCreate:
+      example:
+        Nombre: Nombre
+        Usuario: Usuario
+        IdUsuario: 0
+        Clave: Clave
+      properties:
+        IdUsuario:
+          type: integer
+        Nombre:
+          type: string
+        Usuario:
+          type: string
+        Clave:
+          type: string
+      required:
+      - IdUsuario
+      - Nombre
+      type: object
+    Trabajo:
+      example:
+        Nombre: Nombre
+        IdTrabajo: 0
+      properties:
+        IdTrabajo:
+          type: integer
+        Nombre:
+          type: string
+      type: object
+    TrabajoCreate:
+      example:
+        Nombre: Nuevo trabajo
+      properties:
+        Nombre:
+          type: string
+      required:
+      - Nombre
+      type: object
+    Fichaje:
+      example:
+        GeolocalizacionLatitud: 5.637376656633329
+        GeolocalizacionLongitud: 2.3021358869347655
+        IdUsuario: 5
+        IdFichaje: 0
+        FechaHoraEntrada: 2000-01-23T04:56:07.000+00:00
+        FechaHoraSalida: 2000-01-23T04:56:07.000+00:00
+        IdTrabajo: 1
+        HorasTrabajadas: 6
+      properties:
+        IdFichaje:
+          type: integer
+        FechaHoraEntrada:
+          format: date-time
+          type: string
+        FechaHoraSalida:
+          format: date-time
+          type: string
+        HorasTrabajadas:
+          type: integer
+        IdTrabajo:
+          type: integer
+        IdUsuario:
+          type: integer
+        GeolocalizacionLatitud:
+          type: number
+        GeolocalizacionLongitud:
+          type: number
+      type: object
+    FichajeCreate:
+      example:
+        GeolocalizacionLatitud: 1.4658129805029452
+        GeolocalizacionLongitud: 5.962133916683182
+        IdUsuario: 6
+        FechaHoraEntrada: 2000-01-23T04:56:07.000+00:00
+        IdTrabajo: 0
+      properties:
+        FechaHoraEntrada:
+          format: date-time
+          type: string
+        IdTrabajo:
+          type: integer
+        IdUsuario:
+          type: integer
+        GeolocalizacionLatitud:
+          type: number
+        GeolocalizacionLongitud:
+          type: number
+      required:
+      - FechaHoraEntrada
+      - IdTrabajo
+      - IdUsuario
+      type: object
+    FichajeUpdate:
+      example:
+        FechaHoraSalida: 2000-01-23T04:56:07.000+00:00
+        HorasTrabajadas: 0
+      properties:
+        FechaHoraSalida:
+          format: date-time
+          type: string
+        HorasTrabajadas:
+          type: integer
+      required:
+      - FechaHoraSalida
+      type: object

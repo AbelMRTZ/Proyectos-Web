@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registrar Fichaje</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="recargar()">
+        <ion-icon slot="icon-only" name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <!-- Cargando -->
+  <div *ngIf="cargando" class="ion-text-center ion-padding">
+    <ion-spinner></ion-spinner>
+    <p>Cargando...</p>
+  </div>
+
+  <!-- Estado del Fichaje Activo -->
+  <div *ngIf="!cargando && fichajeActivo" class="estado-fichaje">
+    <ion-card color="warning">
+      <ion-card-header>
+        <ion-card-title>🟡 Fichaje en Curso</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Trabajo:</strong> {{fichajeActivo.TrabajoNombre}}</p>
+        <p><strong>Iniciado:</strong> {{formatearFecha(fichajeActivo.FechaHoraEntrada)}}</p>
+        <p *ngIf="fichajeActivo.GeolocalizacionLatitud">
+          <strong>Ubicación entrada:</strong> 
+          {{fichajeActivo.GeolocalizacionLatitud | number:'1.4-4'}}, 
+          {{fichajeActivo.GeolocalizacionLongitud | number:'1.4-4'}}
+        </p>
+        
+        <ion-button 
+          expand="block" 
+          color="success" 
+          (click)="finalizarFichaje()"
+          class="ion-margin-top">
+          <ion-icon name="stop-circle-outline" slot="start"></ion-icon>
+          Finalizar Fichaje
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Iniciar Nuevo Fichaje -->
+  <div *ngIf="!cargando && !fichajeActivo" class="nuevo-fichaje">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>🟢 Iniciar Nuevo Fichaje</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        
+        <!-- Obteniendo ubicación -->
+        <div *ngIf="obteniendoUbicacion" class="ion-text-center ion-padding">
+          <ion-spinner></ion-spinner>
+          <p>Obteniendo ubicación...</p>
+        </div>
+
+        <div *ngIf="!obteniendoUbicacion">
+          <!-- Selección de trabajo -->
+          <ion-item>
+            <ion-label position="stacked">Seleccionar Trabajo *</ion-label>
+            <ion-select 
+              [(ngModel)]="trabajoSeleccionado" 
+              placeholder="Selecciona un trabajo"
+              interface="action-sheet">
+              <ion-select-option *ngFor="let trabajo of trabajos" [value]="trabajo.IdTrabajo">
+                {{ trabajo.Nombre }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <!-- Información de ubicación -->
+          <ion-item>
+            <ion-label position="stacked">Ubicación Actual</ion-label>
+            <ion-text>
+              <span *ngIf="ubicacion?.lat; else sinUbicacion">
+                {{ ubicacion.lat | number:'1.4-4' }}, {{ ubicacion.lng | number:'1.4-4' }}
+              </span>
+              <ng-template #sinUbicacion>
+                <ion-text color="warning">No disponible</ion-text>
+              </ng-template>
+            </ion-text>
+          </ion-item>
+
+          <!-- Botón para iniciar fichaje -->
+          <ion-button 
+            expand="block" 
+            color="primary" 
+            (click)="iniciarFichaje()"
+            [disabled]="!trabajoSeleccionado"
+            class="ion-margin-top">
+            <ion-icon name="play-circle-outline" slot="start"></ion-icon>
+            Iniciar Fichaje
+          </ion-button>
+        </div>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>

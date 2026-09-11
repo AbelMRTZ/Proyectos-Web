@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Gestión de fichajes</ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div style="padding:12px; display:flex; flex-direction:column; gap:12px;">
+      <ion-searchbar placeholder="Buscar por usuario o trabajo" (ionInput)="onSearchChange($event)" [value]="search"></ion-searchbar>
+
+      <div style="display:flex; gap:8px; align-items:center;">
+        <ion-input type="date" label="Desde" labelPlacement="stacked" [(ngModel)]="desde"></ion-input>
+        <ion-input type="date" label="Hasta" labelPlacement="stacked" [(ngModel)]="hasta"></ion-input>
+      </div>
+
+      <div style="display:flex; gap:8px;">
+        <ion-button (click)="buscar()">Buscar</ion-button>
+        <ion-button fill="outline" color="medium" (click)="limpiar()">Limpiar</ion-button>
+      </div>
+    </div>
+
+    <div style="padding: 12px;" *ngIf="cargando">Cargando...</div>
+
+    <ion-list *ngIf="!cargando">
+      <ion-item *ngFor="let f of filtrados">
+        <ion-label>
+          <h2>{{ nombreUsuario(f.IdUsuario) }}</h2>
+          <p>
+            <strong>Entrada:</strong> {{ f.FechaHoraEntrada | date: 'short' }}<br />
+            <strong>Salida:</strong> {{ f.FechaHoraSalida ? (f.FechaHoraSalida | date: 'short') : '—' }}<br />
+            <strong>Trabajo:</strong> {{ nombreTrabajo(f.IdTrabajo) }}
+          </p>
+        </ion-label>
+        <ion-button size="small" [routerLink]="['/fichaje-mapa']" [queryParams]="{ id: f.IdFichaje }">Ver mapa</ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>

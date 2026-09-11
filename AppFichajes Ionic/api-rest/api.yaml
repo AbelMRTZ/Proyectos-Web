@@ -1,0 +1,301 @@
+openapi: 3.0.0
+info:
+  title: API Registro Horario
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+
+  # USUARIOS
+  /usuarios:
+    get:
+      summary: Obtener todos los usuarios
+      responses:
+        '200':
+          description: Lista de usuarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Usuario'
+    post:
+      summary: Crear usuario
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UsuarioCreate'
+      responses:
+        '201':
+          description: Usuario creado
+
+  /usuarios/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+    get:
+      summary: Obtener usuario por id
+      responses:
+        '200':
+          description: Usuario
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Usuario'
+    put:
+      summary: Actualizar usuario
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UsuarioCreate'
+      responses:
+        '200':
+          description: Usuario actualizado
+    delete:
+      summary: Eliminar usuario
+      responses:
+        '200':
+          description: Usuario eliminado
+
+  # TRABAJOS
+  /trabajos:
+    get:
+      summary: Obtener todos los trabajos
+      responses:
+        '200':
+          description: Lista de trabajos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Trabajo'
+    post:
+      summary: Crear trabajo
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TrabajoCreate'
+      responses:
+        '201':
+          description: Trabajo creado
+
+  /trabajos/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+    get:
+      summary: Obtener trabajo por id
+      responses:
+        '200':
+          description: Trabajo
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Trabajo'
+    put:
+      summary: Actualizar trabajo
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TrabajoCreate'
+      responses:
+        '200':
+          description: Trabajo actualizado
+    delete:
+      summary: Eliminar trabajo
+      responses:
+        '200':
+          description: Trabajo eliminado
+
+  # FICHAJES
+  /fichajes:
+    get:
+      summary: Listar fichajes
+      parameters:
+        - in: query
+          name: idUsuario
+          schema:
+            type: integer
+        - in: query
+          name: desde
+          schema:
+            type: string
+            format: date
+        - in: query
+          name: hasta
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Lista de fichajes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Fichaje'
+    post:
+      summary: Crear fichaje (entrada)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FichajeCreate'
+      responses:
+        '201':
+          description: Fichaje creado
+  /fichajes/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+    get:
+      summary: Obtener fichaje por id
+      responses:
+        '200':
+          description: Fichaje
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fichaje'
+    put:
+      summary: Actualizar fichaje (cerrar con fecha salida)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FichajeUpdate'
+      responses:
+        '200':
+          description: Fichaje actualizado
+    delete:
+      summary: Eliminar fichaje
+      responses:
+        '200':
+          description: Fichaje eliminado
+
+  # APIKEY
+  /apikey/{key}:
+    parameters:
+      - in: path
+        name: key
+        schema:
+          type: string
+        required: true
+    get:
+      summary: Verificar si la apikey existe
+      responses:
+        '200':
+          description: true/false
+
+components:
+  schemas:
+    Usuario:
+      type: object
+      properties:
+        IdUsuario:
+          type: integer
+        Nombre:
+          type: string
+        Usuario:
+          type: string
+        Clave:
+          type: string
+
+    UsuarioCreate:
+      type: object
+      required: [IdUsuario, Nombre]
+      properties:
+        IdUsuario:
+          type: integer
+        Nombre:
+          type: string
+        Usuario:
+          type: string
+        Clave:
+          type: string
+
+    Trabajo:
+      type: object
+      properties:
+        IdTrabajo:
+          type: integer
+        Nombre:
+          type: string
+
+    TrabajoCreate:
+      type: object
+      required: [IdTrabajo, Nombre]
+      properties:
+        IdTrabajo:
+          type: integer
+        Nombre:
+          type: string
+
+    Fichaje:
+      type: object
+      properties:
+        IdFichaje:
+          type: integer
+        FechaHoraEntrada:
+          type: string
+          format: date-time
+        FechaHoraSalida:
+          type: string
+          format: date-time
+        HorasTrabajadas:
+          type: integer
+        IdTrabajo:
+          type: integer
+        IdUsuario:
+          type: integer
+        GeolocalizacionLatitud:
+          type: number
+        GeolocalizacionLongitud:
+          type: number
+
+    FichajeCreate:
+      type: object
+      required: [FechaHoraEntrada, IdTrabajo, IdUsuario]
+      properties:
+        FechaHoraEntrada:
+          type: string
+          format: date-time
+        IdTrabajo:
+          type: integer
+        IdUsuario:
+          type: integer
+        GeolocalizacionLatitud:
+          type: number
+        GeolocalizacionLongitud:
+          type: number
+
+    FichajeUpdate:
+      type: object
+      required: [FechaHoraSalida]
+      properties:
+        FechaHoraSalida:
+          type: string
+          format: date-time
+        HorasTrabajadas:
+          type: integer

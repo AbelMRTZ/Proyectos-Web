@@ -1,0 +1,55 @@
+.fichaje-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  
+  h2 {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+}
+
+.estado-badge {
+  font-size: 0.8em;
+}
+
+.fichaje-tiempos,
+.fichaje-ubicacion,
+.fichaje-horas {
+  margin-bottom: 6px;
+  
+  p {
+    margin: 4px 0;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    
+    ion-icon {
+      margin-right: 6px;
+    }
+  }
+}
+
+.resumen-card {
+  margin-top: 20px;
+  
+  ion-card-content {
+    p {
+      margin: 8px 0;
+      font-size: 0.95em;
+    }
+  }
+}
+
+// Estilos para los items activos
+ion-item[color="light"] {
+  --background: var(--ion-color-light);
+  border-left: 4px solid var(--ion-color-warning);
+}
+
+// Estilos para pull to refresh
+ion-refresher {
+  --ion-text-color: var(--ion-color-primary);
+}

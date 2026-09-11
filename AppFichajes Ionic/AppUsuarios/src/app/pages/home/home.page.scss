@@ -1,0 +1,87 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome-section {
+  ion-icon {
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    margin: 8px 0;
+    font-weight: 600;
+    color: var(--ion-color-primary);
+  }
+
+  p {
+    margin: 0;
+    color: var(--ion-color-medium);
+    font-size: 1.1em;
+  }
+}
+
+.main-card {
+  margin: 20px 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+  ion-card-header {
+    padding-bottom: 8px;
+    
+    ion-card-title {
+      font-size: 1.4em;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+}
+
+.buttons-container {
+  padding-top: 0;
+}
+
+.action-button {
+  margin: 12px 0;
+  --border-radius: 12px;
+  height: 56px;
+  font-weight: 500;
+
+  ion-icon {
+    font-size: 1.2em;
+  }
+}
+
+.info-section {
+  .info-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--ion-color-medium);
+    font-size: 0.9em;
+    margin: 0;
+
+    ion-icon {
+      font-size: 1.1em;
+    }
+  }
+}
+
+// Estilos responsivos
+@media (max-height: 600px) {
+  .container {
+    justify-content: flex-start;
+    padding-top: 20px;
+  }
+  
+  .welcome-section {
+    margin-bottom: 10px;
+    
+    h1 {
+      font-size: 1.5em;
+    }
+  }
+}

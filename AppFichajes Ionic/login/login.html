@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portal de Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="card">
+    <h3>Acceso</h3>
+    <form id="loginForm">
+      <label>Usuario
+        <input name="usuario" id="usuario" autocomplete="username" required />
+      </label>
+      <label>Contraseña
+        <input name="clave" id="clave" type="password" autocomplete="current-password" required />
+      </label>
+      <button type="submit">Iniciar sesión</button>
+    </form>
+    <div class="msg" id="msg"></div>
+    <div class="hint">Servidor de login local: <code>/auth/login</code></div>
+  </div>
+
+  <script>
+    // URLs de destino (apps)
+    const ADMIN_URL = 'http://localhost:8100';
+    const USER_URL  = 'http://localhost:8101';
+
+    const form = document.getElementById('loginForm');
+    const msg = document.getElementById('msg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      msg.textContent = '';
+
+      const usuario = (document.getElementById('usuario').value || '').trim();
+      const clave = (document.getElementById('clave').value || '');
+
+      if (!usuario || !clave) {
+        msg.textContent = 'Introduce usuario y contraseña';
+        return;
+      }
+
+      try {
+        const res = await fetch('/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ usuario, clave })
+        });
+
+        if (!res.ok) {
+          if (res.status === 401) msg.textContent = 'Credenciales incorrectas';
+          else if (res.status === 400) msg.textContent = 'Solicitud inválida';
+          else msg.textContent = 'Error en autenticación';
+          return;
+        }
+
+        const data = await res.json();
+        const u = data.usuario;
+        if (!u || !u.permisos) {
+          msg.textContent = 'Usuario sin permisos definidos';
+          return;
+        }
+
+        // Guardar usuario en localStorage (sin contraseña)
+        try {
+          localStorage.setItem('user', JSON.stringify(u));
+        } catch (err) {
+          console.warn('No se pudo guardar usuario en localStorage', err);
+        }
+
+        // Guardar usuario en localStorage (sin contraseña)
+        try {
+          localStorage.setItem('user', JSON.stringify(u));
+        } catch (err) {
+          console.warn('No se pudo guardar usuario en localStorage', err);
+        }
+
+        // Redirigir según permisos: 'D' -> Admin, 'U' -> Usuarios
+        // Añadimos los datos del usuario a la query string para que la app destino
+        // pueda leerlos en entornos de desarrollo (origenes distintos).
+        const qs = `?IdUsuario=${encodeURIComponent(u.IdUsuario)}&Usuario=${encodeURIComponent(u.Usuario)}&Nombre=${encodeURIComponent(u.Nombre)}&permisos=${encodeURIComponent(u.permisos)}`;
+        if (u.permisos === 'D') window.location.href = ADMIN_URL + qs;
+        else if (u.permisos === 'U') window.location.href = USER_URL + qs;
+        else {
+          msg.textContent = 'Permiso desconocido: ' + u.permisos;
+        }
+      } catch (err) {
+        console.error(err);
+        msg.textContent = 'Error de red al autenticar';
+      }
+    });
+  </script>
+</body>
+</html>

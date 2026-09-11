@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>App Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    
+    <!-- Header de bienvenida -->
+    <div class="welcome-section ion-text-center ion-margin-bottom">
+      <ion-icon name="time-outline" size="large" color="primary"></ion-icon>
+      <h1>Registro Horario</h1>
+      <p>Gestiona tus fichajes de trabajo</p>
+    </div>
+
+    <!-- Tarjeta principal con botones -->
+    <ion-card class="main-card">
+      <ion-card-header>
+        <ion-card-title>¿Qué quieres hacer?</ion-card-title>
+      </ion-card-header>
+      
+      <ion-card-content class="buttons-container">
+        
+        <!-- Botón Registrar Fichaje -->
+        <ion-button 
+          expand="block" 
+          size="large" 
+          color="primary"
+          (click)="irARegistrarFichaje()"
+          class="action-button">
+          <ion-icon slot="start" name="play-circle-outline"></ion-icon>
+          Registrar Fichaje
+        </ion-button>
+
+        <!-- Botón Consultar Fichajes -->
+        <ion-button 
+          expand="block" 
+          size="large" 
+          color="secondary"
+          fill="outline"
+          (click)="irAConsultaFichajes()"
+          class="action-button">
+          <ion-icon slot="start" name="list-outline"></ion-icon>
+          Consultar Fichajes
+        </ion-button>
+
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Información adicional -->
+    <div class="info-section ion-text-center ion-margin-top">
+      <p class="info-text">
+        <ion-icon name="information-circle-outline" color="medium"></ion-icon>
+        Recuerda registrar tu entrada y salida cada día
+      </p>
+    </div>
+
+  </div>
+</ion-content>

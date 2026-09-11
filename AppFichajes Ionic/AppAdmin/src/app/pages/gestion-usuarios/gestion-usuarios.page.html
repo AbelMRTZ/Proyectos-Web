@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Gestión de usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div style="padding: 12px;">
+    <ion-segment [value]="vista" (ionChange)="cambiarVista($event.detail.value)">
+      <ion-segment-button value="normal">Normal</ion-segment-button>
+      <ion-segment-button value="detalle">Detalle</ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div style="padding: 12px;" *ngIf="cargando">Cargando...</div>
+
+  <ion-list *ngIf="!cargando">
+    <ion-item *ngFor="let u of usuarios">
+      <ion-label>
+        <div *ngIf="vista === 'normal'">
+          <h2>{{ u.Nombre }}</h2>
+          <p>ID: {{ u.IdUsuario }} • Usuario: {{ u.Usuario }}</p>
+        </div>
+        <div *ngIf="vista === 'detalle'">
+          <h2>{{ u.Nombre }}</h2>
+          <p>
+            <strong>IdUsuario:</strong> {{ u.IdUsuario }}<br />
+            <strong>Usuario:</strong> {{ u.Usuario }}<br />
+            <strong>Clave:</strong> {{ u.Clave || '—' }}
+          </p>
+        </div>
+      </ion-label>
+      <ion-button size="small" color="medium" (click)="abrirEditar(u)">Editar</ion-button>
+      <ion-button size="small" color="danger" (click)="eliminar(u)">Borrar</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- FAB Crear -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="abrirCrear()">+</ion-fab-button>
+  </ion-fab>
+
+  <!-- Modal Crear/Editar -->
+  <ion-modal [isOpen]="mostrarModal" (didDismiss)="cerrarModal()">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>{{ editando ? 'Editar usuario' : 'Nuevo usuario' }}</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <div style="padding:16px; display:flex; flex-direction:column; gap:12px;">
+          <ion-item>
+            <ion-label position="stacked">Nombre</ion-label>
+            <ion-input [(ngModel)]="form.nombre" placeholder="Nombre"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Usuario</ion-label>
+            <ion-input [(ngModel)]="form.usuario" placeholder="Usuario"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Clave</ion-label>
+            <ion-input type="password" [(ngModel)]="form.clave" placeholder="Clave"></ion-input>
+          </ion-item>
+
+          <div style="display:flex; gap:8px; margin-top:8px;">
+            <ion-button expand="block" (click)="guardar()">Guardar</ion-button>
+            <ion-button expand="block" fill="outline" color="medium" (click)="cerrarModal()">Cancelar</ion-button>
+          </div>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

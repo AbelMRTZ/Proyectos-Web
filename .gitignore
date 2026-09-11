@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+*.log
+.env
+.angular/
+/AppFichajes Ionic/AppAdmin/.git.bak/
+/AppFichajes Ionic/AppUsuarios/.git.bak/

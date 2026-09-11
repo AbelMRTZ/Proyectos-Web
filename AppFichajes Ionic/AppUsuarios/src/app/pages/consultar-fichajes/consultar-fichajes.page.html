@@ -1,0 +1,125 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Consulta de Fichajes</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="recargar()">
+        <ion-icon slot="icon-only" name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Pull to refresh -->
+  <ion-refresher slot="fixed" (ionRefresh)="recargar($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- Estado de carga -->
+  <div *ngIf="cargando" class="ion-text-center ion-padding">
+    <ion-spinner></ion-spinner>
+    <p>Cargando fichajes...</p>
+  </div>
+
+  <!-- Sin fichajes -->
+  <div *ngIf="!cargando && fichajes.length === 0" class="ion-text-center ion-padding">
+    <ion-icon name="calendar-outline" size="large" color="medium"></ion-icon>
+    <h3>No hay fichajes hoy</h3>
+    <p>No se han registrado fichajes para el día de hoy.</p>
+    <ion-button (click)="recargar()" fill="outline">
+      <ion-icon slot="start" name="refresh"></ion-icon>
+      Recargar
+    </ion-button>
+  </div>
+
+  <!-- Lista de fichajes -->
+  <ion-list *ngIf="!cargando && fichajes.length > 0">
+    <ion-item-sliding *ngFor="let fichaje of fichajes; trackBy: trackByFichaje">
+      <ion-item [color]="esFichajeActivo(fichaje) ? 'light' : undefined">
+        <ion-label>
+          <!-- Header con trabajo y estado -->
+          <div class="fichaje-header">
+            <h2>{{ fichaje.TrabajoNombre || 'Sin trabajo asignado' }}</h2>
+            <ion-badge 
+              [color]="esFichajeActivo(fichaje) ? 'warning' : 'success'"
+              class="estado-badge">
+              {{ esFichajeActivo(fichaje) ? '🟡 Activo' : '🟢 Finalizado' }}
+            </ion-badge>
+          </div>
+
+          <!-- Información de tiempos -->
+          <div class="fichaje-tiempos">
+            <p>
+              <ion-text color="primary">
+                <ion-icon name="time-outline" size="small"></ion-icon>
+                <strong>Entrada: </strong> 
+              </ion-text>
+              {{ formatearFecha(fichaje.FechaHoraEntrada) }}
+            </p>
+            
+            <p *ngIf="fichaje.FechaHoraSalida; else sinSalida">
+              <ion-text color="success">
+                <ion-icon name="exit-outline" size="small"></ion-icon>
+                <strong>Salida: </strong> 
+              </ion-text>
+              {{ formatearFecha(fichaje.FechaHoraSalida) }}
+            </p>
+            <ng-template #sinSalida>
+              <p>
+                <ion-text color="warning">
+                  <ion-icon name="time-outline" size="small"></ion-icon>
+                  <strong>Salida: </strong> Pendiente
+                </ion-text>
+              </p>
+            </ng-template>
+
+            <p>
+              <ion-text>
+                <ion-icon name="hourglass-outline" size="small"></ion-icon>
+                <strong>Duración: </strong> 
+              </ion-text>
+              {{ calcularDuracion(fichaje) }}
+            </p>
+          </div>
+
+          <!-- Geolocalización -->
+          <div class="fichaje-ubicacion">
+            <p>
+              <ion-text>
+                <ion-icon name="location-outline" size="small"></ion-icon>
+                <strong>Ubicación: </strong> 
+              </ion-text>
+              {{ formatearGeolocalizacion(fichaje) }}
+            </p>
+          </div>
+
+          <!-- Horas trabajadas (si están calculadas) -->
+          <div *ngIf="fichaje.HorasTrabajadas || fichaje.HorasCalculadas" class="fichaje-horas">
+            <p>
+              <ion-text color="secondary">
+                <ion-icon name="briefcase-outline" size="small"></ion-icon>
+                <strong>Horas trabajadas: </strong> 
+              </ion-text>
+              {{ fichaje.HorasTrabajadas || fichaje.HorasCalculadas }} horas
+            </p>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+
+  <!-- Resumen del día -->
+  <ion-card *ngIf="!cargando && fichajes.length > 0" class="resumen-card">
+    <ion-card-header>
+      <ion-card-title>Resumen del Día</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Total de fichajes:</strong> {{ fichajes.length }}</p>
+      <p><strong>Fichajes activos:</strong> {{ fichajesActivos }}</p>
+      <p><strong>Fichajes finalizados:</strong> {{ fichajesFinalizados }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
